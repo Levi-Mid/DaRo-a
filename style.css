@@ -1,0 +1,30 @@
+.cabecalho{
+    background-color: #EB8832;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botoes_nav{
+    background-color: #3A5D41;
+    width: 100%;
+    height: 50px;
+}
+
+.botoes_nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.botoes_nav a{
+    text-decoration: none;
+    color: white;
+}
+
+* {
+    margin: 0;
+}
+
