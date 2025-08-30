@@ -1,8 +1,84 @@
-header{
-    background-color: #EB8832;
-    display: flex;
-    flex-direction: row;
-    gap: 300px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+header {
+  font-family: Arial, sans-serif;
+}
 
+.top-bar {
+  background-color: #EB8832;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 40px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo .da {
+  color: white;
+}
+.logo .roca {
+  color: #3A5D41;
+
+}
+
+.slogan {
+  font-size: 14px, bold;
+  flex: 1;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Lado direito */
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-icon {
+  width: 28px;
+  height: 28px;
+}
+
+.btn-login { /* Botão entrar */
+  background-color: #5FA783; /* verde */
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Menu inferior que tem os botões*/
+.menu {
+  background-color: #3A5D41; /* verde escuro */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 85px;
+  border-collapse: collapse;
+}
+
+.menu a:last-child {
+  border-right: none;
+}
+
+.menu a:hover {
+  background-color: #344e41;
 }
