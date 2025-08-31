@@ -1,0 +1,152 @@
+.league-gothic {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+body{
+    margin: 0;
+    font-family: inter;
+}
+
+#content{
+    display: flex;
+    flex-direction: row;
+}
+
+#esquerda{
+    width: 50%;
+    background-color: #EB8832;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    color: white;
+    justify-content: space-between;
+}
+
+#esquerda > header{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2em;
+    margin-top: 2em;
+}
+
+#voltar{
+    font-family: inter;
+    border-style: none;
+    background-color: white;
+    border-radius: 100%;
+    width: 48px;
+    height: 48px;
+    font-size: xx-large;
+    color: #3A5D41;
+}
+
+#voltar:hover{
+    cursor: pointer;
+}
+
+#slogan{
+    margin-bottom: 35%;
+}
+#slogan > h1{
+    font-size: 128px;
+    margin: 0;
+}
+#slogan > p{
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+#sloganverde{
+    color: #4C5849;
+}
+
+#rodape > h1{
+    font-size: 128px;
+    margin: 0;
+}
+
+#textoverde{
+    color: #3A5D41;
+}
+
+#direita{
+    width: 50%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    justify-content: space-between;
+}
+
+#direita > header{
+    background-color: #3A5D41;
+    color: white;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#cadastro{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+#info > h2{
+    font-size: 32;
+}
+#info > h3{
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+#inputs{
+    width: 100%;
+}
+
+input{
+    border-style: none none solid none;
+    width: 70%;
+    border-color: #000000;
+    font-size: medium;
+}
+input:focus{
+    outline: none;
+}
+
+.inputs{
+    margin: 5em;
+}
+
+#direita > footer{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+#enviar{
+    border-style: none;
+    background-color: #3A5D41;
+    font-size: 24px;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 15px;
+    margin-right: 5em;
+    margin-bottom: 2em;
+    font-weight: bold;
+}
+#enviar:hover{
+    cursor: pointer;
+}
