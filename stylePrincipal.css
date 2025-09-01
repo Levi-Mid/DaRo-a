@@ -59,6 +59,10 @@ header {
   cursor: pointer;
 }
 
+.btn-login:hover {
+  background-color: #344e41;
+}
+
 /* Menu inferior que tem os botões*/
 .menu {
   background-color: #3A5D41; /* verde escuro */
@@ -84,4 +88,9 @@ header {
 
 .menu a:hover {
   background-color: #344e41;
+}
+
+#carrossel > img{
+  width: 100%;
+  height: 500px;
 }
