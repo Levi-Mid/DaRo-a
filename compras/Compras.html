@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="compras.css">
+</head>
+<body>
+
+
+    <header> 
+        <div id="cabecalho">
+            <div id="logo">
+                <h1><span id="branco">Da</span><span id="laranja" >Roça</span></h1>
+            </div>
+            <div id="barra_pesquisa">
+                <form id="pesquisa">
+                <input type="text" id="search-bar" placeholder="Pesquise por produtos ou marcas">
+                <button type="submit" id="lupa">
+                <img src="imagens/lupa.png" alt="lupa" >
+                </button>
+            </div>
+            <div id="botoes_lateral">
+                <button id="carrinho"><img src="" alt=""></button> 
+                <button id="login">LOGIN</button>   
+            </div>
+        </div>
+        <nav id="menu">
+            <a href="#">INÍCIO</a>
+            <a href="#">PRODUTOS</a>
+            <a href="#">CADASTRO</a>
+            <a href="#">CONTATO</a>
+            <a href="#">SOBRE A EMPRESA</a>
+        </nav>
+        
+    </header>
+
+    <main>
+        <h1 class="titulo_pagina">Categorias</h1>
+        <section id="categorias">  
+            <div>
+                <button class="botao-categorias">
+                <img src="imagens/icone_verduras.png" alt="Verudas">
+                <span class="titulo">VERDURAS</span>
+                </button>
+            </div>
+            <div>
+                <button class="botao-categorias">
+                <img src="imagens/icone_legumes.png" alt="Legumes">
+                <span class="titulo">LEGUMES</span>
+                </button>
+            </div>
+            <div>
+                <button class="botao-categorias">
+                <img src="imagens/icone_frutas.png" alt="Frutas">
+                <span class="titulo">FRUTAS</span>
+                </button>
+            </div>
+        </section >
+
+        <h1 class="titulo_pagina">Produtos</h1>
+        <section id="produtos">
+            <div class="cards">
+                <div class="caixa_com_imagem">
+                    <img src="./imagens/alface.png" alt="">
+                </div>
+                <div class="conteudo">
+                    <div class="informacoes_do_produto">
+                        <h3 class="nome_produto">Alface Crespa</h3>
+                        <p>R$3.99 / unid</p>
+                    </div>
+                    <button class="botao_adicionar">+</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+
+
+    </footer>
+    
+    <script src="compras.js"></script>
+</body>
+</html>
