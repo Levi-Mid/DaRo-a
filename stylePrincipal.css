@@ -25,6 +25,7 @@ header {
 .logo .da {
   color: white;
 }
+
 .logo .roca {
   color: #3A5D41;
 
@@ -49,15 +50,17 @@ header {
   height: 35px;
 }
 
-.btn-cart{
+.btn-cart {
   background-color: whitesmoke;
   border-radius: 30px;
   border: none;
   padding: 5px;
 }
 
-.btn-login { /* Botão entrar */
-  background-color: #5FA783; /* verde */
+.btn-login {
+  /* Botão entrar */
+  background-color: #5FA783;
+  /* verde */
   color: white;
   border: none;
   padding: 6px 16px;
@@ -72,7 +75,8 @@ header {
 
 /* Menu inferior que tem os botões*/
 .menu {
-  background-color: #3A5D41; /* verde escuro */
+  background-color: #3A5D41;
+  /* verde escuro */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -97,23 +101,171 @@ header {
   background-color: #344e41;
 }
 
-#carrossel > img{
+#carrossel>img {
   width: 100%;
   height: 500px;
 }
 
-.mid-page{
+.mid-page {
+  padding: 40px;
 }
 
-.about1{
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  font-family: Arial, sans-serif;
+}
+
+.top-bar {
+  background-color: #EB8832;
+  color: white;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 35px 40px;
 }
 
-.about-text1{
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.logo .da {
+  color: white;
+}
+
+.logo .roca {
+  color: #3A5D41;
+
+}
+
+.slogan {
+  font-size: 14px, bold;
+  flex: 1;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Lado direito */
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-icon {
+  width: 35px;
+  height: 35px;
+}
+
+.btn-cart {
+  background-color: whitesmoke;
+  border-radius: 30px;
+  border: none;
+  padding: 5px;
+}
+
+.btn-login {
+  /* Botão entrar */
+  background-color: #5FA783;
+  /* verde */
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-login:hover {
   background-color: #344e41;
 }
 
-.icon-mid1{
-  width: 600px;
-  height: 600px;
+/* Menu inferior que tem os botões*/
+.menu {
+  background-color: #3A5D41;
+  /* verde escuro */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 85px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  border-right: white 1px solid;
+}
+
+.menu a:last-child {
+  border-right: none;
+}
+
+.menu a:hover {
+  background-color: #344e41;
+}
+
+#carrossel>img {
+  width: 100%;
+  height: 500px;
+}
+
+.mid-page {
+  padding: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px; /* Espaço entre imagem e texto */
+  margin-bottom: 50px;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  flex: auto;
+  border-radius: 30px;
+  padding: 30px;
+  height: 300px;
+}
+
+.text-box{
+  font-family: sans-serif;
+  margin: 90px;
+}
+
+.text-box p{
+  font-size: 20px;
+}
+
+.text-box h3{
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.orange  h3{
+  text-align: right;
+}
+
+.green {
+  background-color: #c2e7e3;
+}
+
+.orange {
+  background-color: #f3c3a2;
+}
+
+.image-box img {
+  width: 350px;
+  height: auto;
 }
