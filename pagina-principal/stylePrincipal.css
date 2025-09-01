@@ -169,6 +169,10 @@ header {
   padding: 5px;
 }
 
+.btn-cart:hover {
+  background-color: rgb(190, 190, 190);
+}
+
 .btn-login {
   /* Botão entrar */
   background-color: #5FA783;
@@ -216,10 +220,11 @@ header {
 #carrossel>img {
   width: 100%;
   height: 500px;
+  padding-bottom: 50px;
 }
 
 .mid-page {
-  padding: 40px;
+  padding: 0px;
 }
 
 .container {
@@ -234,7 +239,6 @@ header {
   display: flex;
   align-items: center;
   flex: auto;
-  border-radius: 30px;
   padding: 30px;
   height: 300px;
 }
@@ -259,13 +263,42 @@ header {
 
 .green {
   background-color: #c2e7e3;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+ 
 }
 
 .orange {
-  background-color: #f3c3a2;
+  background-color: #f3c3a2; 
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
 .image-box img {
   width: 350px;
   height: auto;
+}
+
+.baseboard{
+  background-color: #3A5D41;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.baseboard p{
+  font-size: 20px;
+  font-family: sans-serif;
+  color: whitesmoke;
+}
+
+.baseboard a{
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px 85px;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
 }
