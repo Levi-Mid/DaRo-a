@@ -1,10 +1,6 @@
 # **Projeto DaRoça** 🍊
 Repositório para aula de Praticas Profissionais, do curso de Desenvolvimento de Sistemas.
 
-Abdom Levi
-
-Yan Pedro
-
-João Guilherme
-
+> [!IMPORTANT]
+> Projeto feito para fins educativos.
 **DS25** ☠️
