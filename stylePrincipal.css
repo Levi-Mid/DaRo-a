@@ -45,8 +45,15 @@ header {
 }
 
 .cart-icon {
-  width: 28px;
-  height: 28px;
+  width: 35px;
+  height: 35px;
+}
+
+.btn-cart{
+  background-color: whitesmoke;
+  border-radius: 30px;
+  border: none;
+  padding: 5px;
 }
 
 .btn-login { /* Botão entrar */
@@ -93,4 +100,20 @@ header {
 #carrossel > img{
   width: 100%;
   height: 500px;
+}
+
+.mid-page{
+}
+
+.about1{
+  display: flex;
+}
+
+.about-text1{
+  background-color: #344e41;
+}
+
+.icon-mid1{
+  width: 600px;
+  height: 600px;
 }
