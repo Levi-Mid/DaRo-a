@@ -18,16 +18,17 @@ header {
 }
 
 .logo {
-  font-size: 28px;
   font-weight: bold;
 }
 
 .logo .da {
   color: white;
+  font-size: 80px;
 }
 
 .logo .roca {
   color: #3A5D41;
+  font-size: 80px;
 
 }
 
@@ -154,39 +155,40 @@ header {
 .right-side {
   display: flex;
   align-items: center;
-  gap: 10px;
-}
-
-.cart-icon {
-  width: 35px;
-  height: 35px;
+  gap: 20px;
 }
 
 .btn-cart {
-  background-color: whitesmoke;
-  border-radius: 30px;
-  border: none;
-  padding: 5px;
+    border-radius: 50px;
+    border: none;
+    width: 45px;
+    height: 45px;
+}
+
+.btn-cart > img{
+  height: 30px;
+  width: 30px;
+  margin-top: 5px ;
 }
 
 .btn-cart:hover {
-  background-color: rgb(190, 190, 190);
+  background-color:#489A71;
 }
 
 .btn-login {
-  /* Botão entrar */
-  background-color: #5FA783;
-  /* verde */
-  color: white;
-  border: none;
-  padding: 20px 10px;
-  border-radius: 20px;
-  font-weight: bold;
-  cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    background-color:#489A71;
+    color: white;
+    padding: 15px 40px 15px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 40px;
 }
 
 .btn-login:hover {
-  background-color: #344e41;
+    background-color: white;
+    color: #489A71;
 }
 
 /* Menu inferior que tem os botões*/
@@ -279,26 +281,26 @@ header {
   height: auto;
 }
 
-.baseboard{
-  background-color: #3A5D41;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+footer{
+    background-color: #EB8832;
+    color: white;
+    padding-bottom: 5px;
+}
+footer > h4{
+
+    text-align: center;
+
 }
 
-.baseboard p{
-  font-size: 20px;
+#informacoes_da_empresa{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+    padding: 15px 0px 30px;
+    font-family: sans-serif;
+}
+
+footer h4{
   font-family: sans-serif;
-  color: whitesmoke;
 }
 
-.baseboard a{
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 12px 85px;
-  border-collapse: collapse;
-  width: 100%;
-  text-align: center;
-}
