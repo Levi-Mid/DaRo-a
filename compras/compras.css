@@ -28,7 +28,7 @@
 
 main{
     padding: 0px 20px 40px 20px;
-    font-family: Inter, normal;
+    font-family: Inter, normal, sans-serif;
 
 }
 .titulo_pagina{
@@ -62,7 +62,6 @@ body{
     z-index: 2;      /* fica por cima */
     width: 120px;
     height: 120px;
-    filter: brightness(80%);
 }
 
 .titulo {
@@ -95,6 +94,8 @@ body{
 #carrinho{
     border-radius: 50px;
     border: none;
+    width: 45px;
+    height: 45px;
 }
 #carrinho img {
     width: 30px;
@@ -127,7 +128,7 @@ body{
     display: flex;
     justify-content: space-between;
     background-color:#3A5D41;
-    height: 120px
+    padding: 35px 40px;
 }
 
 #branco{
@@ -186,7 +187,7 @@ body{
     background-color: #ca6a16;
 }
 #barra_pesquisa{
-    padding-top: 60px;
+    padding-top: 50px;
 }
 
 /* abaixo está todos as edições sobre os cards */
@@ -257,8 +258,8 @@ body{
     margin: 5px 0px 0px 0px;
 }
 .cards img {
-    width: 100%;          /* imagem ocupa a largura do card */
-    height: 150px;        /* altura fixa */
+    width: 100%;          
+    height: 150px;        
     object-fit: contain;  /* mantém proporção da imagem */
 }
 .nome_produto{
