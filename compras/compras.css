@@ -1,0 +1,294 @@
+/* fontes */
+@font-face {
+    font-family: 'League Gothic';
+    src: url('./league-gothic.eot');
+    src: url('./league-gothic.eot?#iefix') format('embedded-opentype'),
+         url('./league-gothic.woff') format('woff'),
+         url('./league-gothic.ttf') format('truetype');
+
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  normal;
+  font-weight: 100;
+  src: url("font-files/Inter-UI-Thin.woff2?v=3.2") format("woff2"),
+       url("font-files/Inter-UI-Thin.woff?v=3.2") format("woff");
+}
+@font-face {
+  font-family: 'Inter UI';
+  font-style:  italic;
+  font-weight: 100;
+  src: url("font-files/Inter-UI-ThinItalic.woff2?v=3.2") format("woff2"),
+       url("font-files/Inter-UI-ThinItalic.woff?v=3.2") format("woff");
+}
+
+/*edições gerais */
+
+main{
+    padding: 0px 20px 40px 20px;
+    font-family: Inter, normal;
+
+}
+.titulo_pagina{
+    color: #676767;
+    padding-left: 80px;
+}
+
+body{
+    margin:0px;
+}
+
+/* abaixo está tudo sobre os botoes das categorias */
+
+.botao-categorias {
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.icone_categorias {
+    width: 200px;
+    height: 200px;
+}
+.imagem_icone {
+    border-radius: 50px;
+    position: absolute;
+    top: 20px;       /* distância do topo */
+    left: 50%;       /* centralizar horizontal */
+    transform: translateX(-50%);
+    z-index: 2;      /* fica por cima */
+    width: 120px;
+    height: 120px;
+    filter: brightness(80%);
+}
+
+.titulo {
+    
+    font-weight: bold;
+    position: absolute;
+    top: 160px; /* distância do topo */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+    color: #2c5033; 
+    z-index: 3; /* título acima de tudo */
+}
+#categorias{
+    display: flex;
+    gap: 30px;
+    justify-content: center
+}
+.botao-categorias:hover {
+    transform: scale(1.10);
+}
+
+/* abaixo está tudo sobre o cabecalho */
+
+#botoes_lateral{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+#carrinho{
+    border-radius: 50px;
+    border: none;
+}
+#carrinho img {
+    width: 30px;
+    height: 30px;
+    margin-top: 10px;
+}
+#carrinho:hover{
+    background-color:#489A71;
+}
+#login{
+    border: none;
+    border-radius: 30px;
+    background-color:#489A71;
+    color: white;
+    padding: 15px 40px 15px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 40px;
+}
+#login:hover{
+    background-color: white;
+    color: #489A71;
+
+}
+#logo{
+    padding-left: 20px;
+}
+
+#cabecalho{
+    display: flex;
+    justify-content: space-between;
+    background-color:#3A5D41;
+    height: 120px
+}
+
+#branco{
+    font-family: "League Gothic", sans-serif;
+    font-size:80px;
+    color:white;
+}
+#laranja{
+    font-family: "League Gothic", sans-serif;
+    font-size:80px;
+    color: #EB8832;
+}
+
+#pesquisa > input{
+    border: none;
+    border-radius: 20px 0px 0px 20px;
+    padding: 10px 200px 10px 10px;
+    width: 300px;
+
+}
+#pesquisa{
+    display:flex;
+    justify-content:center;
+}
+#lupa > img{
+    width: 20px;
+    height:20px;
+    
+}
+#lupa{
+    width: 60px;
+    border: none;
+    background-color: #489A71;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#menu {
+    font-family: Inter, normal;
+    background-color: #EB8832;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 85px;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    border-right: white 1px solid;
+} 
+#menu a:hover {
+    background-color: #ca6a16;
+}
+#barra_pesquisa{
+    padding-top: 60px;
+}
+
+/* abaixo está todos as edições sobre os cards */
+
+#produtos{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center
+}
+
+.verdura{
+    background-color: #C7DC8C;
+    border-radius: 10px 10px 0px 0px;
+    padding: 30px;
+    position: relative; /* necessário para o botão ficar dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.legume{
+    background-color: #C3B6F4;
+    border-radius: 10px 10px 0px 0px;
+    padding: 30px;
+    position: relative; /* necessário para o botão ficar dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fruta{
+    background-color: #F5A5A5;
+    border-radius: 10px 10px 0px 0px;
+    padding: 30px;
+    position: relative; /* necessário para o botão ficar dentro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conteudo{
+    background-color: #EDEDED;
+    border-radius: 0px 0px 10px 10px;
+    margin: 0;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* texto à esquerda, botão à direita */
+    align-items: center;
+}
+.botao_adicionar{
+    color: white;
+    background-color: #3A5D41;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    margin: 30px 10px 0px 0px;
+}
+.botao_adicionar:hover{
+    background-color: white;
+    color: #3A5D41;
+}
+.cards{
+    width: 290px;
+    height: 290px;
+    margin: 5px 0px 0px 0px;
+}
+.cards img {
+    width: 100%;          /* imagem ocupa a largura do card */
+    height: 150px;        /* altura fixa */
+    object-fit: contain;  /* mantém proporção da imagem */
+}
+.nome_produto{
+    margin: 0px;
+}
+.informacoes_do_produto > p{
+    font-weight: bold;
+    color: #3A5D41;
+    margin: 8px 0px 0px 0px;
+}
+
+
+/*abaixo tem todas as edições do rodapé */
+
+footer{
+    background-color: #EB8832;
+    color: white;
+    padding-bottom: 5px;
+}
+footer > h4{
+
+    text-align: center;
+
+}
+
+#informacoes_da_empresa{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+
+
+}
+
