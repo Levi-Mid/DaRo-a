@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link id="estilo" rel="stylesheet">
 </head>
 
 <body id="paginaCompleta">
@@ -12,12 +13,15 @@
     <main id="corpo"></main>
     <footer id="rodape"></footer>  
 
+    <script id="funcao"></script>
+
     <script>
         const paginaCompleta = document.getElementById("paginaCompleta")
         const corpo = document.getElementById("corpo")
-        const scripts = document.createElement("script")
         const cabecalho = document.getElementById("cabecalho")
         const rodape = document.getElementById("rodape")
+        const estilo = document.getElementById("estilo")
+        const funcao = document.getElementById("funcao")
 
         fetch("header.html")
             .then(resp=> {
@@ -39,10 +43,10 @@
             .then (arq => {
                 corpo.innerHTML = arq;
 
-                cssInicial = document.createElement("link")
-                cssInicial.rel = "stylesheet"
-                cssInicial.href = "./pagina-principal/stylePrincipal.css"
-                document.getElementById("inicio").appendChild(cssInicial)
+                    cssInicial = document.createElement("link")
+                    cssInicial.rel = "stylesheet"
+                    cssInicial.href = "./pagina-principal/stylePrincipal.css"
+                    document.getElementById("inicio").appendChild(cssInicial)
             })
 
         fetch("footer.html")
@@ -55,41 +59,29 @@
 
         function carregarPagina(pagina){
             fetch(pagina)
-                .then(resp =>{
-                    return resp.text()
-                })
-                .then( arq=>{
+                .then(resp => resp.text())
+                .then(arq => {
                     corpo.innerHTML = arq
 
                     if (pagina == "./compras/compras_body.html") {
-                        const cssBody = document.createElement("link")
-                        cssBody.rel = "stylesheet"
-                        cssBody.href = "./compras/compras.css"
-
-                        document.getElementById("inicio").appendChild(cssBody)
-                        scripts.src="./compras/compras.js"
-                        scripts.defer = true
-                        document.getElementById("corpo").appendChild(scripts)
-
+                        estilo.href = "./compras/compras.css"
+                        funcao.removeAttribute("src") // força reset
+                        funcao.src = "./compras/compras.js"
                     }
-                    if (pagina == "./cadastro/cadastro.html"){
+
+                    if (pagina == "./cadastro/cadastro.html") {
                         paginaCompleta.innerHTML = arq
-
-                        const cssBody = document.createElement("link")
-                        cssBody.rel = "stylesheet"
-                        cssBody.href = "./cadastro/stylecadastro.css"
-
-                        document.getElementById("inicio").appendChild(cssBody)
-
+                        estilo.href = "./cadastro/stylecadastro.css"
+                        funcao.removeAttribute("src")
                     }
-                    if (pagina == "./pagina-principal/indexPrincipal.html"){
-                        const cssBody = document.createElement("link")
-                        cssInicial.rel = "stylesheet"
-                        cssInicial.href = "./pagina-principal/stylePrincipal.css"
-                        document.getElementById("inicio").appendChild(cssBody)
+
+                    if (pagina == "./pagina-principal/indexPrincipal.html") {
+                        estilo.href = "./pagina-principal/stylePrincipal.css"
+                        funcao.removeAttribute("src")
+                        funcao.src = "./pagina-principal/script.js"
                     }
                 })
-            
+        
         }
     </script>
 </body>
