@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head id="inicio">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="paginaCompleta">
+
+    <header id="cabecalho"></header>
+    <main id="corpo"></main>
+    <footer id="rodape"></footer>  
+
+    <script>
+        const paginaCompleta = document.getElementById("paginaCompleta")
+        const corpo = document.getElementById("corpo")
+        const scripts = document.createElement("script")
+        const cabecalho = document.getElementById("cabecalho")
+        const rodape = document.getElementById("rodape")
+
+        fetch("header.html")
+            .then(resp=> {
+                return resp.text()
+            })
+            .then(arq =>{
+                cabecalho.innerHTML = arq
+
+                    let cssCabecalho = document.createElement("link")
+                    cssCabecalho.rel = "stylesheet"
+                    cssCabecalho.href = "styleHeader.css"
+                    document.getElementById("inicio").appendChild(cssCabecalho)
+            })
+        
+        fetch("./pagina-principal/indexPrincipal.html")
+            .then(resp => {
+                return resp.text();
+            })
+            .then (arq => {
+                corpo.innerHTML = arq;
+
+                cssInicial = document.createElement("link")
+                cssInicial.rel = "stylesheet"
+                cssInicial.href = "./pagina-principal/stylePrincipal.css"
+                document.getElementById("inicio").appendChild(cssInicial)
+            })
+
+        fetch("footer.html")
+            .then(resp=> {
+                return resp.text()
+            })
+            .then(arq =>{
+                rodape.innerHTML = arq
+            })
+
+        function carregarPagina(pagina){
+            fetch(pagina)
+                .then(resp =>{
+                    return resp.text()
+                })
+                .then( arq=>{
+                    corpo.innerHTML = arq
+
+                    if (pagina == "./compras/compras_body.html") {
+                        const cssBody = document.createElement("link")
+                        cssBody.rel = "stylesheet"
+                        cssBody.href = "./compras/compras.css"
+
+                        document.getElementById("inicio").appendChild(cssBody)
+                        scripts.src="./compras/compras.js"
+                        scripts.defer = true
+                        document.getElementById("corpo").appendChild(scripts)
+
+                    }
+                    if (pagina == "./cadastro/cadastro.html"){
+                        paginaCompleta.innerHTML = arq
+
+                        const cssBody = document.createElement("link")
+                        cssBody.rel = "stylesheet"
+                        cssBody.href = "./cadastro/stylecadastro.css"
+
+                        document.getElementById("inicio").appendChild(cssBody)
+
+                    }
+                    if (pagina == "./pagina-principal/indexPrincipal.html"){
+                        const cssBody = document.createElement("link")
+                        cssInicial.rel = "stylesheet"
+                        cssInicial.href = "./pagina-principal/stylePrincipal.css"
+                        document.getElementById("inicio").appendChild(cssBody)
+                    }
+                })
+            
+        }
+    </script>
+</body>
+
+</html>
