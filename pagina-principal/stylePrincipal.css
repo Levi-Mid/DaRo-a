@@ -1,9 +1,11 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Header */
 header {
   font-family: Arial, sans-serif;
 }
@@ -18,22 +20,24 @@ header {
 }
 
 .logo {
-  font-weight: bold;
   font-size: 28px;
+  font-weight: bold;
+  padding-left: 20px;
 }
 
 .logo .da {
   color: white;
-  font-size: 80px;
+  font-size:80px;
 }
 
 .logo .roca {
   color: #3A5D41;
-  font-size: 80px;
+  font-size:80px;
 }
 
 .slogan {
   font-size: 14px;
+  font-weight: bold;
   flex: 1;
   text-align: center;
   font-family: Arial, sans-serif;
@@ -46,17 +50,11 @@ header {
   gap: 20px;
 }
 
-.cart-icon {
-  width: 35px;
-  height: 35px;
-}
-
 .btn-cart {
   border-radius: 50px;
   border: none;
   width: 45px;
   height: 45px;
-  background-color: whitesmoke;
 }
 
 .btn-cart > img {
@@ -86,9 +84,9 @@ header {
   color: #489A71;
 }
 
-/* Menu inferior que tem os botões */
+/* Menu inferior */
 .menu {
-  background-color: #3A5D41; /* verde escuro */
+  background-color: #3A5D41;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -99,10 +97,9 @@ header {
   text-decoration: none;
   font-weight: bold;
   padding: 12px 85px;
-  border-collapse: collapse;
   width: 100%;
   text-align: center;
-  border-right: white 1px solid;
+  border-right: 1px solid white;
 }
 
 .menu a:last-child {
@@ -113,15 +110,30 @@ header {
   background-color: #344e41;
 }
 
+/* Carrossel */
+#carrossel {
+  width: 100%;
+  height: 500px;   /* altura fixa do carrossel */
+  overflow: hidden; /* corta o excesso da imagem se passar do limite */
+  margin-bottom: 30px;
+}
+
+#carrossel > img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Página do meio */
 .mid-page {
-  padding: 0px;
+  padding: 0;
 }
 
 .container {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px; /* Espaço entre imagem e texto */
+  gap: 30px;
   margin-bottom: 50px;
 }
 
@@ -168,6 +180,7 @@ header {
   height: auto;
 }
 
+/* Rodapé */
 footer {
   background-color: #EB8832;
   color: white;
@@ -182,7 +195,7 @@ footer > h4 {
   display: flex;
   gap: 80px;
   justify-content: center;
-  padding: 15px 0px 30px;
+  padding: 15px 0 30px;
   font-family: sans-serif;
 }
 

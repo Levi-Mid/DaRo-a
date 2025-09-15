@@ -2,35 +2,35 @@ const produtos = [
     // Frutas
     {
         nome: "Maçã",
-        imagem: "./imagens/alimentos/maça.png",
+        imagem: "./compras/imagens/alimentos/maça.png",
         preco: 5.50,
         quantidade: "kg",
         categoria: "fruta"
     },
     {
         nome: "Banana",
-        imagem: "./imagens/alimentos/banana.png",
+        imagem: "./compras/imagens/alimentos/banana.png",
         preco: 4.20,
         quantidade: "kg",
         categoria: "fruta"
     },
     {
         nome: "Laranja",
-        imagem: "./imagens/alimentos/laranja.png",
+        imagem: "./compras/imagens/alimentos/laranja.png",
         preco: 3.80,
         quantidade: "kg",
         categoria: "fruta"
     },
     {
         nome: "Uva",
-        imagem: "./imagens/alimentos/uva.png",
+        imagem: "./compras/imagens/alimentos/uva.png",
         preco: 9.90,
         quantidade: "kg",
         categoria: "fruta"
     },
     {
         nome: "Manga",
-        imagem: "./imagens/alimentos/manga.png",
+        imagem: "./compras/imagens/alimentos/manga.png",
         preco: 6.00,
         quantidade: "kg",
         categoria: "fruta"
@@ -39,35 +39,35 @@ const produtos = [
     // Legumes
     {
         nome: "Cenoura",
-        imagem: "./imagens/alimentos/cenoura.png",
+        imagem: "./compras/imagens/alimentos/cenoura.png",
         preco: 3.50,
         quantidade: "kg",
         categoria: "legume"
     },
     {
         nome: "Batata",
-        imagem: "./imagens/alimentos/batata.png",
+        imagem: "./compras/imagens/alimentos/batata.png",
         preco: 4.00,
         quantidade: "kg",
         categoria: "legume"
     },
     {
         nome: "Tomate",
-        imagem: "./imagens/alimentos/tomate.png",
+        imagem: "./compras/imagens/alimentos/tomate.png",
         preco: 6.50,
         quantidade: "kg",
         categoria: "legume"
     },
     {
         nome: "Abobrinha",
-        imagem: "./imagens/alimentos/abobrinha.png",
+        imagem: "./compras/imagens/alimentos/abobrinha.png",
         preco: 5.20,
         quantidade: "kg",
         categoria: "legume"
     },
     {
         nome: "Berinjela",
-        imagem: "./imagens/alimentos/berinjela.png",
+        imagem: "./compras/imagens/alimentos/berinjela.png",
         preco: 7.10,
         quantidade: "kg",
         categoria: "legume"
@@ -76,35 +76,35 @@ const produtos = [
     // Verduras
     {
         nome: "Alface",
-        imagem: "./imagens/alimentos/alface.png",
+        imagem: "./compras/imagens/alimentos/alface.png",
         preco: 2.50,
         quantidade: "unid",
         categoria: "verdura"
     },
     {
         nome: "Couve",
-        imagem: "./imagens/alimentos/couve.png",
+        imagem: "./compras/imagens/alimentos/couve.png",
         preco: 3.00,
         quantidade: "unid",
         categoria: "verdura"
     },
     {
         nome: "Rúcula",
-        imagem: "./imagens/alimentos/rucula.png",
+        imagem: "./compras/imagens/alimentos/rucula.png",
         preco: 3.20,
         quantidade: "pct",
         categoria: "verdura"
     },
     {
         nome: "Espinafre",
-        imagem: "./imagens/alimentos/espinafre.png",
+        imagem: "./compras/imagens/alimentos/espinafre.png",
         preco: 4.50,
         quantidade: "pct",
         categoria: "verdura"
     },
     {
         nome: "Agrião",
-        imagem: "./imagens/alimentos/agrião.png",
+        imagem: "./compras/imagens/alimentos/agrião.png",
         preco: 3.80,
         quantidade: "pct",
         categoria: "verdura"
