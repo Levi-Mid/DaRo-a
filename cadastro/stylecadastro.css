@@ -140,6 +140,10 @@ input:focus{
     background-color: white;
 }
 
+#direita  button{
+    margin-right: 175px;
+}
+
 #enviar{
     border-style: none;
     background-color: #3A5D41;
