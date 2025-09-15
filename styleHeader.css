@@ -16,6 +16,7 @@
 }
 #carrinho:hover{
     background-color:#489A71;
+    cursor: pointer;
 }
 #login{
     border: none;
@@ -30,6 +31,7 @@
 #login:hover{
     background-color: white;
     color: #489A71;
+    cursor: pointer;
 
 }
 #logo{
@@ -102,6 +104,7 @@
 }
 #menu a:hover {
     background-color: #ca6a16;
+    cursor: pointer;
 }
 #barra_pesquisa{
     padding-top: 30px;

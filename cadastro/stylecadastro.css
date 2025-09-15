@@ -52,6 +52,12 @@ body{
     cursor: pointer;
 }
 
+#voltar a{
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
 #slogan{
     margin-bottom: 35%;
 }
