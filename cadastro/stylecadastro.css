@@ -105,10 +105,12 @@ body{
 
 #info > h2{
     font-size: 32;
+    font-family: sans-serif;
 }
 #info > h3{
     font-size: 20px;
     font-weight: lighter;
+    font-family: sans-serif;
 }
 
 #inputs{
@@ -120,6 +122,7 @@ input{
     width: 70%;
     border-color: #000000;
     font-size: medium;
+    font-family: sans-serif;
 }
 input:focus{
     outline: none;
@@ -134,6 +137,7 @@ input:focus{
     display: flex;
     flex-direction: row;
     justify-content: right;
+    background-color: white;
 }
 
 #enviar{
@@ -147,6 +151,12 @@ input:focus{
     margin-bottom: 2em;
     font-weight: bold;
 }
+
 #enviar:hover{
     cursor: pointer;
+    background-color: #29412e;
+}
+
+#frase{
+    font-family: sans-serif;
 }
