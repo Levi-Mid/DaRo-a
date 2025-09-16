@@ -27,6 +27,7 @@ body{
     height: 100vh;
     color: white;
     justify-content: space-between;
+    user-select: none;
 }
 
 #esquerda > header{
@@ -46,6 +47,8 @@ body{
     height: 48px;
     font-size: xx-large;
     color: #3A5D41;
+    user-select: none;
+    -webkit-user-drag: none;
 }
 
 #voltar:hover{
@@ -54,8 +57,6 @@ body{
 
 #voltar a{
     text-decoration: none;
-    user-select: none;
-    -webkit-user-drag: none;
 }
 
 #slogan{
@@ -92,6 +93,7 @@ body{
     text-align: center;
     height: 100vh;
     justify-content: space-between;
+    overflow-y: auto;
 }
 
 #direita > header{
@@ -102,6 +104,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 #cadastro{
