@@ -93,7 +93,7 @@ body{
     justify-content: center
 }
 
-.verdura{
+.categoria-3{
     background-color: #C7DC8C;
     border-radius: 10px 10px 0px 0px;
     padding: 30px;
@@ -103,7 +103,7 @@ body{
     align-items: center;
 }
 
-.legume{
+.categoria-2{
     background-color: #C3B6F4;
     border-radius: 10px 10px 0px 0px;
     padding: 30px;
@@ -113,7 +113,7 @@ body{
     align-items: center;
 }
 
-.fruta{
+.categoria-1{
     background-color: #F5A5A5;
     border-radius: 10px 10px 0px 0px;
     padding: 30px;
