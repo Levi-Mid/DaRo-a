@@ -121,8 +121,7 @@ header {
 }
 
 #carrossel > img{
-  height: 500px;
-  width: 800px;
+  width: 100%;
 }
 /* Página do meio */
 .mid-page {
