@@ -11,7 +11,7 @@
     <div id="content">
         <main id="esquerda">
             <header id="teste">
-                <button id="voltar"><a href="/main.html"><</a></button>
+                <a href="/main.html"><button id="voltar"><</button></a>
             </header>
             <section id="slogan">
                 <h1 class="league-gothic"><span>Da</span><span id="sloganverde">Roça</span></h1>
@@ -31,15 +31,15 @@
                 <h3>os campos marcados com (*) são obrigatórios</h3>
             </section>
             <div id="inputs">
-                <div class="inputs"><input type="number" placeholder="CPF  *"></div>
-                <div class="inputs"><input type="text" placeholder="Nome completo conforme o documento  *"></div>
-                <div class="inputs"><input type="text" placeholder="Apelido ou nome social"></div>
-                <div class="inputs"><input type="date" placeholder="Data de nascimento  *"></div>
+                <div class="inputs"><input type="number" placeholder="CPF  *" id="cpf"></div>
+                <div class="inputs"><input type="text" placeholder="Nome completo conforme o documento  *" id="nome"></div>
+                <div class="inputs"><input type="text" placeholder="Apelido ou nome social" id="nomeSocial"></div>
+                <div class="inputs"><input type="date" placeholder="Data de nascimento  *" id="nascimento"></div>
             </div>
             <footer>
-                <button id="enviar">Próximo</button>
+                <button id="enviar" onclick="proximo()">Próximo</button>
             </footer>
         </main>
     </div>
+    <script src="cadastro.js"></script>
 </body>
-
