@@ -21,16 +21,16 @@ const produtos = [
     { id: 15, nome: "Agrião", imagem: "./compras/imagens/alimentos/agrião.png", valor: 3.80, descricao: "pct", categoria: 3 }
 ];
 
-
+let url = "http://localhost:8088/produtos"
 async function carregarProdutos() {
     try {
-        const resposta = await fetch("http://localhost:8081/produtos")
+        const resposta = await fetch(url)
         const produtos = await resposta.json()
 
         criarCards(produtos)
     }
     catch (erro){
-        console.error("errp ap buscar produtos", erro)
+        console.error("erro ao buscar produtos", erro)
     }
 }
 
