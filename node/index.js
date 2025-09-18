@@ -6,9 +6,7 @@ const app = express();
 const mssql = require('mssql');
 const cors = require('cors');
 
-app.use(cors({
-    origin: 'http://localhost'
-}));
+app.use(cors());
 
 app.use(express.json())
 async function conectaBD(){
