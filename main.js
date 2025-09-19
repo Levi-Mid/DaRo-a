@@ -47,6 +47,7 @@ function carregarPagina(pagina){
 
             if (pagina == "./compras/compras_body.html") {
                 estilo.href = "./compras/compras.css"
+                funcao.removeAttribute("src")
                 funcao.src = "./compras/compras.js"
                 paginaCompleta.appendChild(funcao)
             }
@@ -54,6 +55,7 @@ function carregarPagina(pagina){
             if (pagina == "./cadastro/cadastro.html") {
                 paginaCompleta.innerHTML = arq
                 estilo.href = "./cadastro/stylecadastro.css"
+                funcao.removeAttribute("src")
                 funcao.src = "./cadastro/cadastro.js"
                 paginaCompleta.appendChild(funcao)
             }
