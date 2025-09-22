@@ -179,25 +179,3 @@ header {
   height: auto;
 }
 
-/* Rodapé */
-footer {
-  background-color: #EB8832;
-  color: white;
-  padding-bottom: 5px;
-}
-
-footer > h4 {
-  text-align: center;
-}
-
-#informacoes_da_empresa {
-  display: flex;
-  gap: 80px;
-  justify-content: center;
-  padding: 15px 0 30px;
-  font-family: sans-serif;
-}
-
-footer h4 {
-  font-family: sans-serif;
-}
