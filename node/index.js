@@ -31,10 +31,10 @@ app.get('/produtos', async (req, res) => {
 // http://localhost:8088/usuarios
 app.post('/usuarios', (req, res) => {
 try {
-const ra = req.body.ra;
-const nome = req.body.nome;
+const cpf = req.body.cpf;
+const nomecompleto = req.body.nomeCompleto;
 const codcurso = req.body.codcurso;
-mssql.query(`INSERT INTO Aluno (ra,nome,codcurso) VALUES
+mssql.query(`INSERT INTO daroca.usuarios (ra,nome,codcurso) VALUES
 (${ra},'${nome}',${codcurso})`)
 res.status(201).json({ "mensagem": "Dados inseridos com sucesso."})
 }
