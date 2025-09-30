@@ -31,16 +31,27 @@ app.get('/produtos', async (req, res) => {
 // http://localhost:8088/usuarios
 app.post('/usuarios', (req, res) => {
 try {
-const cpf = req.body.cpf;
-const nomecompleto = req.body.nomeCompleto;
-const codcurso = req.body.codcurso;
-mssql.query(`INSERT INTO daroca.usuarios (ra,nome,codcurso) VALUES
-(${ra},'${nome}',${codcurso})`)
-res.status(201).json({ "mensagem": "Dados inseridos com sucesso."})
-}
+    const cpf = req.body.cpf;
+    const nomeCompleto = req.body.nomeCompleto;
+    const nomeSocial = req.body.nomeSocial;
+    const dataNascimento = req.body.dataNascimento;
+    const email = req.body.email;
+    const senha = req.body.senha;
+    const rua = req.body.rua;
+    const bairro = req.body.bairro;
+    const numero = req.body.numero;
+    const cep = req.body.cep;
+    const complemento = req.body.complemento;
+    const pontoReferencia = req.body.pontoReferencia;
+    const telefone = req.body.telefone;
+
+    mssql.query(`INSERT INTO daroca.usuarios (cpf, nome_completo, apelido_nome_social, data_nascimento,  email, senha,  rua, bairro,  numero, cep, complemento, ponto_referencia, telefone_contato) VALUES
+    (${cpf},'${nomeCompleto}','${nomeSocial}', ${dataNascimento}, '${email}', '${senha}', '${rua}','${bairro}',${numero},${cep},'${complemento}','${pontoReferencia}',${telefone})`)
+    res.status(201).json({ "mensagem": "Dados inseridos com sucesso."})
+    }
 catch (erro){
-console.log("Erro na inserção de dados.",erro)
-}
+    console.log("Erro na inserção de dados.",erro)
+    }
 })
 
 
