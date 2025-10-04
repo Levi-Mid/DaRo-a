@@ -101,6 +101,7 @@
     font-weight: bold;
     padding: 12px 0;          
     border-right: white 1px solid;
+    font-family: sans-serif;
 }
 #menu a:hover {
     background-color: #ca6a16;
