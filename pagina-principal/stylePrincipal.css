@@ -110,19 +110,33 @@ header {
   background-color: #344e41;
 }
 
+
 /* Carrossel */
-#carrossel {
-  margin-top: 20px;
-  display: flex;
-  width: 100%;  /* altura fixa do carrossel */
-  height: 100%;
-  margin-bottom: 30px;
-  justify-content: center;
+.carrossel {
+  position: relative;
+  width: 1900px; 
+  height: 800px;            
+  overflow: hidden;
+  
 }
 
-#carrossel > img{
+.carrosselImagens {
+  display: flex;
   width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+  
 }
+
+.carrosselImagens img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* mantém proporção, preenche o espaço sem distorcer */
+  flex-shrink: 0; 
+
+}
+
 /* Página do meio */
 .mid-page {
   padding: 0;
