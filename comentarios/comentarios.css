@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.league-gothic {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 80%;
+    margin: 1em auto;
+}
+
+#block {    
+    background-color: #EB8832;
+    border-radius: 10px;
+    height: 220px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#caixa{
+    width: fit-content;
+    margin-left: 8%;
+    margin-bottom: 1em;
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+}
+
+#caixa > h1{
+    color: #3A5D41;
+    width: max-content;
+    font-size: 48px;
+    font-weight: lighter;
+}
+
+#botao {
+    background-color: #3A5D41;
+    color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-style: none;
+    font-size: 24px;
+}
+
+#botao:hover{
+    cursor: pointer;
+}
+
+#barra{
+    width: 100%;
+    height: 0.5em;
+    background-color: #EB8832;
+}
+
+.comment{
+    display: flex;
+    flex-direction: row;
+    font-size: xx-large;
+    justify-content: space-between;
+}
+
+.infos{
+    padding: 0.5em;
+    border-radius: 10px;
+    color: 423E3C;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 70%;
+    border-radius: 10px;
+    border-left: 0.3em solid;
+    color: #3A5D41;
+}
+
+#formulario{
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    gap: 2em;
+}
+
+#formulario input, textarea{
+    border-style: none;
+    font-size: 25px;
+}
+
+#userInfo{
+    display: flex;
+    flex-direction: row;
+    gap: 5em;
+}
+
+#userInfo > input{
+    width: 200px;
+    height: 53px;
+}
+
+#texto {
+    width: 90%;
+}
