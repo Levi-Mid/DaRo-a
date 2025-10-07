@@ -66,6 +66,25 @@ app.post('/usuarios', async (req, res) => {
   }
 });
 
+// http://localhost:8088/comentarios
+app.get('/comentarios', async (req, res) => {
+    const comentarios = await mssql.query("SELECT * FROM daroca.comentarios")
+    res.json(comentarios.recordset)
+})
+
+app.post('/comentarios', async (req, res) => {
+    try{
+        const nome = req.body.nome
+        const idade = req.body.idade
+        const texto = req.body.texto
+
+        await mssql.query(`INSERT INTO daroca.comentarios (nome, idade, texto) VALUES '${nome}', '${idade}', '${texto}'`)
+        res.status(201).json("comentario inserido com sucesso")
+    }
+    catch (erro){
+        console.log("Erro na postagem do comentario")
+    }
+})
 
 // rota principal
 app.use('/', (req, res) => res.json({ mensagem: 'Servidor em execução' }))
