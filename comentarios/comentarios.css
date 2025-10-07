@@ -103,6 +103,11 @@
     border-style: none;
     font-size: 25px;
     border-radius: 10px;
+    padding-left: 10px;
+}
+
+#formulario input, textarea:focus{
+    outline: 0;
 }
 
 #userInfo{
@@ -119,6 +124,7 @@
 #texto {
     width: 90%;
     resize: none;
+    padding-top: 10px;
 }
 
 #botao_enviar{
@@ -128,7 +134,7 @@
     border-style: none;
     border-radius: 10px;
     color: white;
-    font-size: larger;
+    font-size: 32px;
 }
 #botao_enviar:hover{
     cursor: pointer;
