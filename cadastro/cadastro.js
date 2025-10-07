@@ -13,17 +13,24 @@ let infos = {
         complemento: "",
         pontoRef: ""
     },
+    frequencia: "",
     senha: ""
 }
 
-let ids = ["tel", "email", "rua", "bairro", "numero", "cep", "complemento", "pontoRef", "senha"]
-let placeholders = ["Telefone *", "Email *", "Rua *", "Bairro *", "Numero *", "CEP *", "Complemento *", "Ponto de referencia *", "Senha *"]
+const ids = ["tel", "email", "rua", "bairro", "numero", "cep", "complemento", "pontoRef", "frequencia", "senha"]
+const placeholders = ["Telefone *", "Email *", "Rua *", "Bairro *", "Numero *", "CEP *", "Complemento *", "Ponto de referencia *", "Frequencia*", "Senha *"]
 
 function outraEtapa(){
     let geral = "";
-    for (let i = 0; i < 9; i++){
+    for (let i = 0; i < ids.length; i++){
+      if (i == 8){
+        select = `<select id="frequencia"><option value="7">Semanal</option><option value="15">Quinzenal</option><option value="30">Mensal</option></select>`
+        geral += select
+      }
+      else{
         div = `<div class="inputs"><input type="text" placeholder="${placeholders[i]}" id="${ids[i]}"></div>`
         geral += div
+      }
     }
     return geral
 }
