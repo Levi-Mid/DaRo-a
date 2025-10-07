@@ -78,7 +78,7 @@ app.post('/comentarios', async (req, res) => {
         const idade = req.body.idade
         const texto = req.body.texto
 
-        await mssql.query(`INSERT INTO daroca.comentarios (nome, idade, texto) VALUES '${nome}', '${idade}', '${texto}'`)
+        await mssql.query(`INSERT INTO daroca.comentarios (nome, idade, texto) VALUES ('${nome}', '${idade}', '${texto}')`)
         res.status(201).json("comentario inserido com sucesso")
     }
     catch (erro){
