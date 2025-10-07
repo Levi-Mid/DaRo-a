@@ -49,30 +49,62 @@ function proximo(){
     }
 }
 
-function enviar(){
-    let tel = document.getElementById("tel").value;
-    let email = document.getElementById("email").value;
-    let rua = document.getElementById("rua").value;
-    let bairro = document.getElementById("bairro").value;
-    let numero = document.getElementById("numero").value;
-    let cep = document.getElementById("cep").value;
-    let complemento = document.getElementById("complemento").value;
-    let pontoRef = document.getElementById("pontoRef").value;
-    let senha = document.getElementById("senha").value;
+async function enviar() {
+  let tel = document.getElementById("tel").value;
+  let email = document.getElementById("email").value;
+  let rua = document.getElementById("rua").value;
+  let bairro = document.getElementById("bairro").value;
+  let numero = document.getElementById("numero").value;
+  let cep = document.getElementById("cep").value;
+  let complemento = document.getElementById("complemento").value;
+  let pontoRef = document.getElementById("pontoRef").value;
+  let senha = document.getElementById("senha").value;
 
-    if (tel == "" || email == "" || rua == "" || bairro == "" || numero == "" || cep == "" || complemento == "" || pontoRef == "" || senha == ""){
-        alert("Preencha todos os campos que contenham *")
+  if (tel == "" || email == "" || rua == "" || bairro == "" || numero == "" || cep == "" || complemento == "" || pontoRef == "" || senha == "") {
+    alert("Preencha todos os campos que contenham *");
+    return;
+  }
+
+  infos.tel = tel;
+  infos.email = email;
+  infos.endereco.rua = rua;
+  infos.endereco.bairro = bairro;
+  infos.endereco.numero = numero;
+  infos.endereco.cep = cep;
+  infos.endereco.complemento = complemento;
+  infos.endereco.pontoRef = pontoRef;
+  infos.senha = senha;
+
+  const url = "http://localhost:8088/usuarios";
+  const dados = {
+    cpf: infos.cpf,
+    nomeCompleto: infos.nome,
+    nomeSocial: infos.nomeSocial,
+    dataNascimento: infos.nascimento,
+    email: infos.email,
+    senha: infos.senha,
+    rua: infos.endereco.rua,
+    bairro: infos.endereco.bairro,
+    numero: infos.endereco.numero,
+    cep: infos.endereco.cep,
+    complemento: infos.endereco.complemento,
+    pontoReferencia: infos.endereco.pontoRef,
+    telefone: infos.tel
+  };
+
+  try {
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(dados)
+    });
+
+    if (response.ok) {
+      alert("Usuário cadastrado com sucesso!");
+    } else {
+      alert("Erro ao cadastrar usuário!");
     }
-    else{
-        infos.tel = tel
-        infos.email = email
-        infos.endereco.rua = rua
-        infos.endereco.bairro = bairro
-        infos.endereco.numero = numero
-        infos.endereco.cep = cep
-        infos.endereco.complemento = complemento
-        infos.endereco.pontoRef = pontoRef
-        infos.senha = senha
-        console.log(infos)
-    }
+  } catch (error) {
+    console.error("Erro na requisição:", error);
+  }
 }
