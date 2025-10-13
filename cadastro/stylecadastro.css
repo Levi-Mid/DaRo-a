@@ -173,3 +173,16 @@ input:focus{
 #frase{
     font-family: sans-serif;
 }
+
+#frequencia{
+    border: 2px solid #000000;
+    border-style: none none solid none;
+    width: 59%;
+    border-color: #000000;
+    font-size: medium;
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+#frequencia:focus{
+    outline: none;
+}

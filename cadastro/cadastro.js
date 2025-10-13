@@ -65,6 +65,7 @@ async function enviar() {
   let cep = document.getElementById("cep").value;
   let complemento = document.getElementById("complemento").value;
   let pontoRef = document.getElementById("pontoRef").value;
+  let frequencia = document.getElementById("frequencia").value;
   let senha = document.getElementById("senha").value;
 
   if (tel == "" || email == "" || rua == "" || bairro == "" || numero == "" || cep == "" || complemento == "" || pontoRef == "" || senha == "") {
@@ -80,6 +81,7 @@ async function enviar() {
   infos.endereco.cep = cep;
   infos.endereco.complemento = complemento;
   infos.endereco.pontoRef = pontoRef;
+  infos.frequencia = frequencia;
   infos.senha = senha;
 
   const url = "http://localhost:8088/usuarios";
@@ -96,6 +98,7 @@ async function enviar() {
     cep: infos.endereco.cep,
     complemento: infos.endereco.complemento,
     pontoReferencia: infos.endereco.pontoRef,
+    frequencia: frequencia,
     telefone: infos.tel
   };
 
