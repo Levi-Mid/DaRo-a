@@ -1,4 +1,3 @@
-const { get } = require("http")
 const {mssql} = require("../config/db")
 
 async function getComentarios(){
