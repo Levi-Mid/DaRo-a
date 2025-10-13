@@ -12,7 +12,21 @@
         </div>
         <div id="botoes_lateral">
             <a href="../carrinho/carrinho.html"><button id="carrinho"><img src="../compras/imagens/carrinho-de-compras 1.png" ></button></a> 
-            <button id="login">LOGIN</button>   
+            <button id="login" class="login-button">LOGIN</button>  
+            <div id="loginPopup" class="login-popup">
+                <h3>LOGIN</h3>
+                <label for="email">E-mail</label>
+                <input type="email" id="email" placeholder="Digite seu e-mail" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" placeholder="Digite sua senha" required>
+
+                <button type="submit" class="botaoEnviar">ENTRAR</button>
+
+                <P>Novo usuário? <a href="../cadastro/cadastro.html">Cadastre-se!</a></P>
+
+            </div>
+            
         </div>
     </div>
     <nav id="menu">
