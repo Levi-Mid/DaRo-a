@@ -86,6 +86,12 @@
     border-radius: 0px 20px 20px 0px;
 }
 
+
+#lupa:hover{
+    background-color: #3f8663;
+}
+
+
 #menu {
     display: flex;
     justify-content: center; 
