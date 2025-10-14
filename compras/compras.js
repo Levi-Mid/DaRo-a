@@ -1,29 +1,15 @@
 var listaDeProdutos = [];
 var arrayDeNomes = [];
-let url = "http://localhost:8088/produtos"
+let url = (localStorage.getItem("nome") == null) ? "http://localhost:8088/produtos/" : `http://localhost:8088/produtos/${localStorage.getItem("nome")}`
 
-fetch("http://localhost:8088/produtos")
+fetch(url)
     .then(res => res.json())
     .then(produtos => {
         listaDeProdutos = produtos;
         criarCards(listaDeProdutos); // cria todos os cards inicialmente
     });
 
-window.addEventListener("buscarProduto", (event) => {
-    const termo = event.detail; // pega o termo enviado pelo header
-    let produtosFiltrados = listaDeProdutos;
-
-    if (termo !== "") {
-        produtosFiltrados = produtosFiltrados.filter(p =>
-            p.nome.trim().toLowerCase().includes(termo)
-        );
-    }
-
-    criarCards(produtosFiltrados); // atualiza os cards com o filtro
-});
-
-
-
+localStorage.removeItem("nome")
 
 function criarCards(produtos){
     let section = document.getElementById("produtos");

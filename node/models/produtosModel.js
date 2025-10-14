@@ -5,4 +5,9 @@ async function getProdutos(){
     return produtos.recordset
 }
 
-module.exports = {getProdutos}
+async function getProdutoEspecifico(nome){
+    const produtos = await mssql.query(`SELECT * FROM daroca.produtos WHERE nome LIKE '${nome}%'`)
+    return produtos.recordset
+}
+
+module.exports = {getProdutos, getProdutoEspecifico}
