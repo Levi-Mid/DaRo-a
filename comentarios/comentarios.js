@@ -72,7 +72,7 @@ async function enviar(url){
             return resp.json()
         })
         .then(dados => {
-            alert("Comentario feito com sucesso")
+            alert(dados.msg)
         })
         .catch((error) =>{
             alert(error)

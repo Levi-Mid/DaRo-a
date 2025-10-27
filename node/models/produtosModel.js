@@ -6,7 +6,12 @@ async function getProdutos(){
 }
 
 async function getProdutoEspecifico(nome){
-    const produtos = await mssql.query(`SELECT * FROM daroca.produtos WHERE nome LIKE '${nome}%'`)
+    const request = new mssql.Request()
+
+    request.input("nome", mssql.VarChar(30), nome + '%')
+
+    const query = `SELECT * FROM daroca.produtos WHERE nome LIKE @nome`
+    const produtos = await request.query(query)
     return produtos.recordset
 }
 

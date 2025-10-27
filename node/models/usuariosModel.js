@@ -20,12 +20,28 @@ async function postUsers(data){
     } = data;
 
     const newSenha = await bcrypt.hash(senha, 10)
+
+    const request = new mssql.Request()
+
+    request.input("cpf", mssql.Char(11), cpf)
+    request.input("nome_completo", mssql.VarChar(200), nomeCompleto)
+    request.input("apelido_nome_social", mssql.VarChar(100), nomeSocial)
+    request.input("data_nascimento", mssql.Date, dataNascimento)
+    request.input("email", mssql.VarChar(255), email)
+    request.input("senha", mssql.VarChar(255), newSenha)
+    request.input("rua", mssql.VarChar(200), rua)
+    request.input("bairro", mssql.VarChar(100), bairro)
+    request.input("numero", mssql.VarChar(30), numero)
+    request.input("cep", mssql.VarChar(20), cep)
+    request.input("complemento", mssql.VarChar(150), complemento)
+    request.input("ponte_referencia", mssql.VarChar(200), pontoReferencia)
+    request.input("telefone_contato", mssql.VarChar(30), telefone)
+    request.input("frequencia", mssql.Char(2), frequencia)
     
-    await mssql.query(`
-      INSERT INTO daroca.usuarios 
-      (cpf, nome_completo, apelido_nome_social, data_nascimento, email, senha, rua, bairro, numero, cep, complemento, ponto_referencia, frequencia, telefone_contato)
-      VALUES ('${cpf}', '${nomeCompleto}', '${nomeSocial}', '${dataNascimento}', '${email}', '${newSenha}', '${rua}', '${bairro}', '${numero}', '${cep}', '${complemento}', '${pontoReferencia}', '${frequencia}', '${telefone}')
-    `);
+    const query = `
+      INSERT INTO daroca.usuarios (cpf, nome_completo, apelido_nome_social, data_nascimento, email, senha, rua, bairro, numero, cep, complemento, ponto_referencia, frequencia, telefone_contato)
+      VALUES (@cpf, @nome_completo, @apelido_nome_social, @data_nascimento, @email, @senha, @rua, @bairro, @numero, @cep, @complemento, @ponto_referencia, @frequencia, @telefone_contato)`
+    await request.query(query)
 
     return {mensagem: "Usuario inserido com sucesso"}
 }

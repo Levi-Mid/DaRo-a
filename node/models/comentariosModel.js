@@ -6,8 +6,15 @@ async function getComentarios(){
 }
 
 async function postComentario(data){
-    const {nome, idade, texto} = data
-    await mssql.query(`INSERT INTO daroca.comentarios (nome, idade, texto) VALUES ('${nome}', '${idade}', '${texto}')`)
+    const {nome, texto} = data
+
+    const request = new mssql.Request()
+
+    request.input("nome", mssql.VarChar(100), nome)
+    request.texto("texto", mssql.NVarChar(MAX), texto)
+
+    const query = `INSERT INTO daroca.comentarios (nome, idade, texto) VALUES (@nome,  @texto)`
+    await request.query(query)
     return {mensagem: "Comentario feito com sucesso"}
 }
 

@@ -114,7 +114,7 @@ header {
 /* Carrossel */
 .carrossel {
   position: relative;
-  width: 1900px; 
+  width: 100%; 
   height: 800px;            
   overflow: hidden;
   
