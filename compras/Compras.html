@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,54 +9,73 @@
     <link id="footer">
     <link rel="stylesheet" href="compras.css">
 </head>
+
 <body>
-
-
     <header id="cabecalho"></header>
 
     <main>
         <h1 class="titulo_pagina">Categorias</h1>
-        <section id="categorias">  
+        <section id="categorias">
             <div>
                 <button class="botao-categorias" onclick="filtrarCategoria('TODOS')">
-                <img src="imagens/icone_todos.png" alt="Frutas" class ="icone_categorias">
-                <img src="imagens/FLV.jpg" class="imagem_icone">
-                <span class="titulo">TODOS</span>
+                    <img src="imagens/icone_todos.png" alt="Frutas" class="icone_categorias">
+                    <img src="imagens/FLV.jpg" class="imagem_icone">
+                    <span class="titulo">TODOS</span>
                 </button>
             </div>
             <div>
                 <button class="botao-categorias" onclick="filtrarCategoria(1)">
-                <img src="imagens/icone_frutas.png" alt="Frutas" class ="icone_categorias">
-                <img src="imagens/Frutas.jpg" class="imagem_icone">
-                <span class="titulo">FRUTAS</span>
+                    <img src="imagens/icone_frutas.png" alt="Frutas" class="icone_categorias">
+                    <img src="imagens/Frutas.jpg" class="imagem_icone">
+                    <span class="titulo">FRUTAS</span>
                 </button>
             </div>
             <div>
                 <button class="botao-categorias" onclick="filtrarCategoria(2)">
-                <img src="imagens/icone_legumes.png" alt="Legumes" class ="icone_categorias">
-                <img src="imagens/Legumes.jpg" class="imagem_icone">
-                <span class="titulo">LEGUMES</span>
+                    <img src="imagens/icone_legumes.png" alt="Legumes" class="icone_categorias">
+                    <img src="imagens/Legumes.jpg" class="imagem_icone">
+                    <span class="titulo">LEGUMES</span>
                 </button>
             </div>
             <div>
                 <button class="botao-categorias" onclick="filtrarCategoria(3)">
-                <img src="imagens/icone_verduras.png" class ="icone_categorias"alt="Verudas">
-                <img src="imagens/verduras.jpg" class="imagem_icone">
-                <span class="titulo">VERDURAS</span>
+                    <img src="imagens/icone_verduras.png" class="icone_categorias" alt="Verudas">
+                    <img src="imagens/verduras.jpg" class="imagem_icone">
+                    <span class="titulo">VERDURAS</span>
                 </button>
             </div>
-        </section >
+        </section>
 
         <h1 class="titulo_pagina">Produtos</h1>
         <section id="produtos">
-            
-        </section>
-    </main>
 
-    <footer id="rodape"></footer> 
+        </section>
+        
+        <div id="modal" class="modal escondido">
+            <div class="modal-conteudo">
+                <span id="fechar-modal">&times;</span>
+                <h2 id="modal-nome"></h2>
+                <img id="modal-imagem" src="" width="180">
+                <p id="modal-preco"></p>
+
+                <div class="quantidade-container">
+                    <button id="diminuir">-</button>
+                    <span id="quantidade">1</span>
+                    <button id="aumentar">+</button>
+                </div>
+
+                <p id="valor-total"></p>
+
+                <button id="adicionar-carrinho">Adicionar ao carrinho</button>
+            </div>
+        </div>
+
+    </main>
+    <footer id="rodape"></footer>
 
     <script src="../main.js"></script>
     <script src="compras.js"></script>
     <script src="../header/header.js"></script>
 </body>
+
 </html>

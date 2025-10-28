@@ -157,7 +157,10 @@ footer > h4{
     display: flex;
     gap: 80px;
     justify-content: center;
+}
 
-
+/*Modal (não consegui acessar a api por isso apenas a class escondido)*/
+.escondido{
+    display: none;
 }
 

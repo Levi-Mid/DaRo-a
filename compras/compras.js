@@ -48,7 +48,9 @@ function criarCards(produtos){
         let botao = document.createElement("button");
         botao.classList.add("botao_adicionar");
         botao.textContent = `+`;
-
+        botao.addEventListener("click", () => {
+            mostrarModal(produto)
+        })
         conteudo.appendChild(info);
         conteudo.appendChild(botao);
 
@@ -59,6 +61,53 @@ function criarCards(produtos){
     });
 }
 
+function mostrarModal(produto) {
+    const modal = document.getElementById("modal");
+    const nomeEl = document.getElementById("modal-nome");
+    const imagemEl = document.getElementById("modal-imagem");
+    const precoEl = document.getElementById("modal-preco");
+    const totalEl = document.getElementById("valor-total");
+    const qtdEl = document.getElementById("quantidade");
+
+    let quantidade = 1;
+
+    // preenche o modal com os dados do produto
+    nomeEl.textContent = produto.nome;
+    imagemEl.src = produto.imagem;
+    precoEl.textContent = `Preço: R$ ${produto.valor.toFixed(2)}`;
+    totalEl.textContent = `Total: R$ ${(produto.valor * quantidade).toFixed(2)}`;
+    qtdEl.textContent = quantidade;
+
+    modal.classList.remove("escondido");
+
+    // aumentar quantidade clicou no botao +
+    document.getElementById("aumentar").onclick = () => {
+        quantidade++;
+        qtdEl.textContent = quantidade;
+        totalEl.textContent = `Total: R$ ${(produto.valor * quantidade).toFixed(2)}`;
+    };
+
+    // diminuir quantidade, apertou no botão -
+    document.getElementById("diminuir").onclick = () => {
+        if (quantidade > 1) {
+            quantidade--;
+            qtdEl.textContent = quantidade;
+            totalEl.textContent = `Total: R$ ${(produto.valor * quantidade).toFixed(2)}`;
+        }
+    };
+
+    // fechar modal (esconde)
+    document.getElementById("fechar-modal").onclick = () => {
+        modal.classList.add("escondido");
+    };
+
+    // botão de adicionar ao carrinho (simples, só para testar)
+    document.getElementById("adicionar-carrinho").onclick = () => {
+        console.log(`Adicionado: ${produto.nome} - Quantidade: ${quantidade}`);
+        alert(`Produto adicionado ao carrinho com sucesso!`);
+        modal.classList.add("escondido");
+    };
+}
 
 
 function filtrarCategoria(categoria) {
