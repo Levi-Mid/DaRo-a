@@ -16,13 +16,10 @@ function mostrarComentarios(url){
                 let nome = document.createElement("p")
                 nome.textContent = "Nome: " + pull[i].nome
 
-                let idade = document.createElement("p")
-                idade.textContent = "Idade: " + pull[i].idade
-
                 let dia = document.createElement("p")
                 dia.textContent = "Data: " + pull[i].data_criacao
 
-                info.append(nome, idade, dia)
+                info.append(nome, dia)
 
                 let texto = document.createElement("p")
                 texto.classList.add("texto")
@@ -49,10 +46,9 @@ mostrarComentarios(url)
 
 async function enviar(url){
     let nome = document.getElementById("nome").value
-    let idade = document.getElementById("idade").value
     let texto = document.getElementById("texto").value
 
-    if (nome == "" || idade == "" || texto == ""){
+    if (nome == "" || texto == ""){
         return alert("Você precisa preencher todos os campos")
     }
 
@@ -63,7 +59,6 @@ async function enviar(url){
         },
         body: JSON.stringify({
             nome: nome,
-            idade: idade,
             texto: texto
         })
     }
@@ -90,10 +85,6 @@ function abrirForm(){
         nome.id = "nome"
         nome.placeholder = "Nome"
         nome.className = "league-gothic"
-        let idade = document.createElement("input")
-        idade.id = "idade"
-        idade.placeholder = "Idade"
-        idade.className = "league-gothic"
         let botao = document.createElement("button")
         botao.id = "botao_enviar"
         botao.addEventListener("click", () => {
@@ -102,7 +93,7 @@ function abrirForm(){
         botao.textContent = "Enviar"
         botao.classList.add("league-gothic")
 
-        infos.append(nome, idade)
+        infos.append(nome)
 
         let texto = document.createElement("textarea")
         texto.id = "texto"

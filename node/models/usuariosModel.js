@@ -34,7 +34,7 @@ async function postUsers(data){
     request.input("numero", mssql.VarChar(30), numero)
     request.input("cep", mssql.VarChar(20), cep)
     request.input("complemento", mssql.VarChar(150), complemento)
-    request.input("ponte_referencia", mssql.VarChar(200), pontoReferencia)
+    request.input("ponto_referencia", mssql.VarChar(200), pontoReferencia)
     request.input("telefone_contato", mssql.VarChar(30), telefone)
     request.input("frequencia", mssql.Char(2), frequencia)
     
