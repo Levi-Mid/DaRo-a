@@ -13,5 +13,4 @@ function slideImages() {
   carrosselImages.style.transform = `translateX(${-index * 100}%)`;
 }
 
-// Troca a cada 3 segundos
 setInterval(slideImages, 15000);

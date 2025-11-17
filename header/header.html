@@ -1,40 +1,62 @@
 <div id="cabecalho">
     <div id="topo">
         <div id="logo">
-            <h1><span id="branco">Da</span><span id="laranja" >Roça</span></h1>
+            <h1><span id="branco">Da</span><span id="laranja">Roça</span></h1>
         </div>
+
         <div id="barra_pesquisa">
-            <form id="pesquisa">
-            <input type="text" id="search-bar" placeholder="Pesquise por produtos ou marcas">
-            <a id="lupa" onclick="buscar(event)" href='#'>
-                <img src="../compras/imagens/lupa.png" alt="lupa">
-            </a>
+            <form id="pesquisa" onsubmit="buscar(event)">
+                <input type="text" id="search-bar" placeholder="Pesquise por produtos ou marcas">
+
+                <button id="lupa" type="submit">
+                    <img src="../compras/imagens/lupa.png" alt="lupa">
+                </button>
+            </form>
         </div>
+
         <div id="botoes_lateral">
-            <a href="../carrinho/carrinho.html"><button id="carrinho"><img src="../compras/imagens/carrinho-de-compras 1.png" ></button></a> 
-            <button id="login" class="login-button">LOGIN</button>  
-            <div id="loginPopup" class="login-popup">
-                <h3>LOGIN</h3>
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail" required>
 
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" placeholder="Digite sua senha" required>
+            <a href="../carrinho/carrinho.html">
+                <button id="carrinho">
+                    <img src="../compras/imagens/carrinho-de-compras 1.png">
+                </button>
+            </a>
 
-                <button type="submit" class="botaoEnviar">ENTRAR</button>
+            <div class="login-container">
+                <!-- BOTÃO DE LOGIN -->
+                <span class="header-link show-btn">LOGIN</span>
 
-                <P>Novo usuário? <a href="../cadastro/cadastro.html">Cadastre-se!</a></P>
+                <!-- FORMULÁRIO DE LOGIN -->
+                <form id="form-login" action="#">
+                    <div class="informacoes">
+                        <label>Email</label>
+                        <input type="text" name ="login-email"required>
+                    </div>
+
+                    <div class="informacoes">
+                        <label>Senha</label>
+                        <input type="password" name="login-senha" required>
+                    </div>
+
+                    <div class="informacoes">
+                        <button type="submit" >ENTRAR</button>
+                    </div>
+
+                    <div class="informacoes">
+                        <p>Novo usuário?<a href="../cadastro/cadastro.html"> Cadastre-se</a></p>
+                    </div>
+                </form>
 
             </div>
-            
         </div>
     </div>
+
     <nav id="menu">
         <a href="../indexPrincipal.html">INÍCIO</a>
         <a href='../compras/Compras.html'>PRODUTOS</a>
-        <a href='../cadastro/cadastro.html'>CADASTRO</a>
         <a href="#informacoes_da_empresa">CONTATO</a>
         <a href="../comentarios/comentarios.html" onclick="carregarPagina('')">SOBRE A EMPRESA</a>
     </nav>
 </div>
+
 <script src="header.js"></script>
