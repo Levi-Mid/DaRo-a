@@ -40,6 +40,9 @@ body {
 
 #bodyCarrinho {
   padding: 20px;
+  margin-top: 130px;
+  text-align: center;
+  font-size: 25px;
 }
 
 .produtos {

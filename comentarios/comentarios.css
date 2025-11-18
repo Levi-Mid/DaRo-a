@@ -22,14 +22,18 @@
 }
 
 #block {    
-    background-color: #EB8832;
+    background-image: url(../comentarios/BannerComentario.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1600px 500px;
     border-radius: 10px;
-    height: 220px;
+    height: 400px;
     display: flex;
     flex-direction: column-reverse;
 }
 
 #caixa{
+    
     width: fit-content;
     margin-left: 8%;
     margin-bottom: 1em;
