@@ -25,7 +25,7 @@ async function login(req, res) {
         const senhaValida = await bcrypt.compare(senha, usuario.senha)
         if (!senhaValida) res.status(401).json({msg: "Senha incorreta"})
 
-        const token = jwt.sign({nome: usuario.nome_completo, email: usuario.email}, SECRET, { expiresIn: "24h" })
+        const token = jwt.sign({nome: usuario.nome_completo, email: usuario.email, id: usuario.id_usuario}, SECRET, { expiresIn: "24h" })
         res.json({token})
     }
     catch (err){

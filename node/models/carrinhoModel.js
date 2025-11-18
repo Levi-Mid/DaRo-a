@@ -56,12 +56,13 @@ async function addProdutoAoCarrinho(id_usuario, id_produto, quantidade) {
 
     } else {
         await pool.request()
+            .input("id_usuario", mssql.Int, id_usuario)
             .input("id_carrinho", mssql.Int, id_carrinho)
             .input("id_produto", mssql.Int, id_produto)
             .input("quantidade", mssql.Int, quantidade)
             .query(`
-                INSERT INTO daroca.itenscarrinho (id_carrinho, id_produto, quantidade)
-                VALUES (@id_carrinho, @id_produto, @quantidade)
+                INSERT INTO daroca.itenscarrinho (id_carrinho, id_produto, quantidade, id_usuario)
+                VALUES (@id_carrinho, @id_produto, @quantidade, @id_usuario)
             `);
     }
 
@@ -117,13 +118,14 @@ async function getCarrinhoDoUsuario(id_usuario) {
     return itens.recordset;
 }
 
-async function removerItemDoCarrinho(id_item) {
+async function removerItemDoCarrinho(id_item, id_usuario) {
     let request = new mssql.Request();
     request.input("id_item", mssql.Int, id_item);
+    request.input("id_usuario", mssql.Int, id_usuario)
 
     await request.query(`
         DELETE FROM daroca.itenscarrinho
-        WHERE id_item = @id_item
+        WHERE id_item = @id_item AND id_usuario = @id_usuario
     `);
 
     return true;

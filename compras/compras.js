@@ -112,14 +112,16 @@ async function adicionarProdutoAPI(idProduto, quantidade) {
     const urlAPI = "http://localhost:8088/carrinho"; 
     
     try {
+        const token = localStorage.getItem("token")
         const response = await fetch(urlAPI, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                "Authorization": "Bearer " + token
             },
             body: JSON.stringify({
                 id_produto: idProduto,
-                quantidade: quantidade
+                quantidade: quantidade,
             })
         });
 

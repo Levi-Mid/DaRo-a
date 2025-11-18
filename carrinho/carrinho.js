@@ -5,7 +5,13 @@ const precoTotalElemento = document.getElementById("precoTotal");
 // carregar o carrinho
 async function carregarCarrinho() {
     try {
-        const response = await fetch(urlCarrinho);
+        const token = localStorage.getItem("token")
+
+        const response = await fetch(urlCarrinho, {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
         const data = await response.json();
 
         if (response.ok) {
@@ -77,8 +83,12 @@ async function removerItem(id_item) {
     if (!confirm("Deseja remover este item do carrinho?")) return;
 
     try {
+        const token = localStorage.getItem("token")
         const response = await fetch(`http://localhost:8088/carrinho/item/${id_item}`, {
-            method: "DELETE"
+            method: "DELETE",
+            headers: {
+                "Authorization": "Bearer " + token
+            },
         });
 
         const data = await response.json();

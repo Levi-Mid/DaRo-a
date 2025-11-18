@@ -4,7 +4,8 @@ async function adicionarAoCarrinho(req, res) {
     const { id_produto, quantidade } = req.body;
 
     // ID de teste (substituir depois pelo usuário logado)
-    const id_usuario = 1;
+    const id_usuario = req.user.id;
+    console.log(id_usuario)
 
     if (!id_produto || !quantidade || quantidade < 1) {
         return res.status(400).json({ mensagem: "Dados inválidos: id_produto e quantidade são obrigatórios." });
@@ -20,7 +21,7 @@ async function adicionarAoCarrinho(req, res) {
 }
 
 async function mostrarCarrinho(req, res) {
-    const id_usuario = 1; // substituir depois pela sessão
+    const id_usuario = req.user.id; // substituir depois pela sessão
 
     try {
         const itens = await carrinhoModel.getCarrinhoDoUsuario(id_usuario);
@@ -57,9 +58,10 @@ async function mostrarCarrinho(req, res) {
 
 async function removerItem(req, res) {
     const { id_item } = req.params;
+    const id_usuario = req.user.id
 
     try {
-        const resultado = await carrinhoModel.removerItemDoCarrinho(id_item);
+        const resultado = await carrinhoModel.removerItemDoCarrinho(id_item, id_usuario);
         res.status(200).json({ mensagem: "Item removido com sucesso!" });
     } catch (error) {
         console.error("Erro ao remover item:", error);

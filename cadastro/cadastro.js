@@ -24,11 +24,11 @@ function outraEtapa(){
     let geral = "";
     for (let i = 0; i < ids.length; i++){
       if (i == 8){
-        select = `<select id="frequencia"><option value="7">Semanal</option><option value="15">Quinzenal</option><option value="30">Mensal</option></select>`
+        let select = `<select id="frequencia"><option value="7">Semanal</option><option value="15">Quinzenal</option><option value="30">Mensal</option></select>`
         geral += select
       }
       else{
-        div = `<div class="inputs"><input type="text" placeholder="${placeholders[i]}" id="${ids[i]}"></div>`
+        let div = `<div class="inputs"><input type="text" placeholder="${placeholders[i]}" id="${ids[i]}"></div>`
         geral += div
       }
     }
@@ -98,7 +98,7 @@ async function enviar() {
     cep: infos.endereco.cep,
     complemento: infos.endereco.complemento,
     pontoReferencia: infos.endereco.pontoRef,
-    frequencia: frequencia,
+    frequencia: infos.frequencia,
     telefone: infos.tel
   };
 

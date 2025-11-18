@@ -1,14 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const carrinhoController = require("../controllers/carrinhoController");
+const {autenticar} = require("../services/auth")
 
 // Remover item
-router.delete("/item/:id_item", carrinhoController.removerItem);
+router.delete("/item/:id_item", autenticar,carrinhoController.removerItem);
 
 // Adicionar produto ao carrinho
-router.post("/", carrinhoController.adicionarAoCarrinho);
+router.post("/", autenticar, carrinhoController.adicionarAoCarrinho);
 
 // Buscar itens do carrinho
-router.get("/", carrinhoController.mostrarCarrinho);
+router.get("/", autenticar, carrinhoController.mostrarCarrinho);
 
 module.exports = router;
