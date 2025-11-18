@@ -103,10 +103,40 @@ function mostrarModal(produto) {
 
     // botão de adicionar ao carrinho (simples, só para testar)
     document.getElementById("adicionar-carrinho").onclick = () => {
-        console.log(`Adicionado: ${produto.nome} - Quantidade: ${quantidade}`);
-        alert(`Produto adicionado ao carrinho com sucesso!`);
+        adicionarProdutoAPI(produto.id, quantidade); 
         modal.classList.add("escondido");
     };
+}
+
+async function adicionarProdutoAPI(idProduto, quantidade) {
+    const urlAPI = "http://localhost:8088/carrinho"; 
+    
+    try {
+        const response = await fetch(urlAPI, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id_produto: idProduto,
+                quantidade: quantidade
+            })
+        });
+
+        const resultado = await response.json();
+
+        if (response.ok) {
+            console.log("Produto adicionado com sucesso:", resultado);
+            alert(`"${resultado.mensagem}"`);
+            
+        } else {
+            console.error("Erro ao adicionar ao carrinho:", resultado.mensagem);
+            alert(`Erro: ${resultado.mensagem}`);
+        }
+    } catch (error) {
+        console.error("Erro de rede ao adicionar ao carrinho:", error);
+        alert("Erro de comunicação com o servidor.");
+    }
 }
 
 

@@ -49,28 +49,26 @@ body {
 }
 
 .produto {
-  background-color: #d6d6d6;
+  background-color: #f6f6f6;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.07);
+  transition: transform .15s ease;
 }
 
 .produto img {
-  width: 40px;
-  height: 40px;
-  border-radius: 6px;
-  background-color: #ccc;
+  width: 55px;
+  height: 55px;
+  border-radius: 8px;
 }
 
 #total {
   background-color: #e6e6e6;
-  padding: 8px 15px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  padding: 8px;
+  border-radius: 0 0 20px 20px;
   margin-bottom: 20px;
   margin-left: 650px;
 }
@@ -83,18 +81,62 @@ body {
 
 
 #buttonFinalizar {
-  background-color: #2c5033;
+  background-color: #44694c;
   color: white;
   border: none;
-  padding: 8px 20px;
+  padding: 20px 100px;
   border-radius: 8px;
   cursor: pointer;
   font-family: sans-serif;
-  font-size: medium;
+  font-size: 20px;
   margin-bottom: 50px;
-  margin-left: 800px;
 }
 
 #buttonFinalizar:hover {
+  background-color: #173521;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+}
+
+.info h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.info p {
+  color: #666;
+  font-size: 14px;
+}
+
+
+.quantidade {
+  font-size: 14px;
+  font-weight: 500;
+  color: #444;
+}
+
+
+.valor {
+  font-size: 16px;
+  font-weight: bold;
+  color: #EB8832;
+}
+
+.btn-remover {
+  background-color: #5FA783;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  transition: .2s;
+}
+.btn-remover:hover{
   background-color: #21422c;
 }

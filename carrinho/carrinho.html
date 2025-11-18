@@ -12,42 +12,34 @@
 
 <body>
     <header id="cabecalho"></header>
+
     <div class="container">
+
         <div class="carrinho">
-            <div id="headerCarrinho"> 
-                <!--
-                    é onde tema  parte verde escrito carrinho, 
-                    só design mesmo
-                -->
+            <div id="headerCarrinho">
                 <h1>Carrinho</h1>
             </div>
+
             <div id="bodyCarrinho">
                 <div class="produtos">
-                    <!--
-                        class Produto devem ser implementada a partir
-                        do JavaScript para cada Produto
-                    -->
+                    <!-- Produtos serão inseridos via carrinho.js -->
                 </div>
             </div>
         </div>
+
         <div id="total">
-            <h3 id="precoTotal">Total: RS$???</h3>
-
-                
-                <!--
-                    O valor do preço total
-                    Só pode ser inserido
-                    Se já estiver com produtos para calcular.
-                -->
-
-            </h3>
+            <h3 id="precoTotal">Total: R$ 0,00</h3>
         </div>
+
         <button type="button" id="buttonFinalizar">Finalizar</button>
+        
     </div>
-    <footer id="rodape"></footer> 
+
+    <footer id="rodape"></footer>
+
+    <script src="carrinho.js"></script>
+    <script src="../main.js"></script>
+    <script src="../header/header.js"></script>
 
 </body>
-<script src="carrinho.css"></script>
-<script src="../main.js"></script>
-<script src="../header/header.js"></script>
 </html>
