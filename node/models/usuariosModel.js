@@ -57,4 +57,13 @@ async function searchUser(email){
     return usuario.recordset[0]
 }
 
-module.exports = {postUsers, searchUser}
+async function getUser(nome){
+  const request = new mssql.Request()
+
+  request.input("nome", mssql.VarChar(200), nome)
+  const query = `SELECT * FROM daroca.usuarios where nome_completo = @nome`
+  const usuario = await request.query(query)
+  return usuario.recordset[0]
+}
+
+module.exports = {postUsers, searchUser, getUser}

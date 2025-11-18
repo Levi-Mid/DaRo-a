@@ -33,4 +33,15 @@ async function login(req, res) {
     }
 }
 
-module.exports = {postUsuario, login}
+async function getNome(req, res) {
+    try{
+        const nome = req.user.nome_completo
+
+        res.json({nome})
+    }
+    catch{
+        res.status(500).json({erro: err.message})
+    }
+}
+
+module.exports = {postUsuario, login, getNome}

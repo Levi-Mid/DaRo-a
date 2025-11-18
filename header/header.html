@@ -22,24 +22,24 @@
                 </button>
             </a>
 
-            <div class="login-container">
+            <div class="login-container" id="aquelaParteLa">
                 <!-- BOTÃO DE LOGIN -->
                 <span class="header-link show-btn">LOGIN</span>
 
                 <!-- FORMULÁRIO DE LOGIN -->
-                <form id="form-login" action="#">
+                <form id="form-login" action="#" onsubmit="login(event)">
                     <div class="informacoes">
                         <label>Email</label>
-                        <input type="text" name ="login-email"required>
+                        <input id="email" type="text" name ="login-email"required>
                     </div>
 
                     <div class="informacoes">
                         <label>Senha</label>
-                        <input type="password" name="login-senha" required>
+                        <input id="senha" type="password" name="login-senha" required>
                     </div>
 
                     <div class="informacoes">
-                        <button type="submit" >ENTRAR</button>
+                        <button type="submit">ENTRAR</button>
                     </div>
 
                     <div class="informacoes">
