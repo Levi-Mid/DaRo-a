@@ -44,7 +44,7 @@ function exibirItensCarrinho(itens) {
         precoUnitarioP.textContent = `R$ ${item.valor.toFixed(2)}`;
 
         const quantidadeP = document.createElement("p");
-        quantidadeP.textContent = `Qtd: ${item.quantidade} un`;
+        quantidadeP.textContent = `Qtd: ${item.quantidade} ${item.descricao}`;
 
         infoDiv.appendChild(nomeP);
         infoDiv.appendChild(precoUnitarioP);

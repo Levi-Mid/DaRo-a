@@ -67,10 +67,15 @@ body {
 
 #total {
   background-color: #e6e6e6;
-  padding: 8px;
+  padding: 20px;
   border-radius: 0 0 20px 20px;
   margin-bottom: 20px;
-  margin-left: 650px;
+  margin-left: 625px;
+}
+#total > hr{
+  height: 5px;
+  background-color: #EB8832;
+  border: none;
 }
 
 #total h3 {
