@@ -35,8 +35,8 @@ async function login(req, res) {
 
 async function getNome(req, res) {
     try{
-        const nome = req.user.nome_completo
-
+        const nome = req.user.nome
+        
         res.json({nome})
     }
     catch{

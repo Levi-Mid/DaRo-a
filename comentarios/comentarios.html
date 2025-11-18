@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,18 +12,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=League+Gothic&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <header id="cabecalho"></header>
     <div id="container" class="league-gothic">
-        <div id="block">    
+        <div id="block">
             <div id="caixa">
                 <h1>DEIXE SUA OPINIÃO</h1>
                 <button id="botao" class="league-gothic" onclick="abrirForm()">Clicando Aqui!</button>
             </div>
         </div>
-        <div id="formulario">
+        <form id="formulario" onsubmit="enviar(url, event)">
 
-        </div>
+        </form>
         <div id="barra"></div>
         <div id="comentarios">
 
@@ -33,4 +35,5 @@
     <script src="../main.js"></script>
     <script src="../header/header.js"></script>
 </body>
+
 </html>

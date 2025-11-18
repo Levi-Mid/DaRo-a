@@ -107,8 +107,11 @@
 
 .login-container {
     position: relative; 
-    display: inline-block; 
+    display: flex; 
     min-height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* BOTÃO DE LOGIN */
@@ -214,7 +217,8 @@
 }
 
 #msgdeboasvindas{
-    color: #D9D9D9;
+    color: #FFFFFF;
     font-family: "League Gothic", sans-serif;
     font-weight: bold;
+    border-bottom: 1px solid white;
 }

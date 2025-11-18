@@ -44,9 +44,12 @@ function mostrarComentarios(url){
 
 mostrarComentarios(url)
 
-async function enviar(url){
+async function enviar(url, event){
+    event.preventDefault()
+
     let nome = document.getElementById("nome").value
     let texto = document.getElementById("texto").value
+    let token = localStorage.getItem("token")
 
     if (nome == "" || texto == ""){
         return alert("Você precisa preencher todos os campos")
@@ -55,7 +58,8 @@ async function enviar(url){
     let dados = {
         method: "POST",
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "Authorization": "Bearer " + token
         },
         body: JSON.stringify({
             nome: nome,
@@ -63,35 +67,38 @@ async function enviar(url){
         })
     }
     await fetch(url, dados)
-        .then(resp => {
-            return resp.json()
-        })
-        .then(dados => {
-            alert(dados.msg)
-        })
-        .catch((error) =>{
-            alert(error)
-        })
+    window.location.reload()
 }
 
 let formAberto = false
-function abrirForm(){
-    if (!formAberto){
+async function abrirForm(){
+    if (!formAberto && localStorage.getItem("token")){
         let div = document.getElementById("formulario")
 
         let infos = document.createElement("div")
         infos.id = "userInfo"
         let nome = document.createElement("input")
         nome.id = "nome"
-        nome.placeholder = "Nome"
+        const token = localStorage.getItem("token")
+
+        const pegarNome = await fetch("http://localhost:8088/usuarios/", {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        })
+
+        const data = await pegarNome.json()
+        let nomeCerto = data.nome.split(" ")
+
+        nome.value = nomeCerto[0]
         nome.className = "league-gothic"
+        nome.readOnly = true
+        
         let botao = document.createElement("button")
         botao.id = "botao_enviar"
-        botao.addEventListener("click", () => {
-            enviar(url)
-        })
         botao.textContent = "Enviar"
         botao.classList.add("league-gothic")
+        botao.type = "submit"
 
         infos.append(nome)
 
@@ -106,5 +113,8 @@ function abrirForm(){
         div.appendChild(botao)
 
         formAberto = true
+    }
+    else{
+        if (!localStorage.getItem("token")) alert("Você precisa estar logado")
     }
 }

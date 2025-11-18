@@ -1,5 +1,3 @@
-const url = "http://localhost:8088/usuarios/login"
-
 function buscar(event) {
   event.preventDefault();
 
@@ -23,10 +21,12 @@ async function verificarToken(){
       })
 
       const data = await response.json()
-      console.log(data)
+
+      let funciona = data.nome
+      let nomeCerto = funciona.split(" ")
 
       document.getElementById("aquelaParteLa").innerHTML =
-        `<h3 id="msgdeboasvindas">Bem-vindo ${data.nome_completo}</h3>`
+        `<h3 id="msgdeboasvindas">Bem-vindo, ${nomeCerto[0]}</h3>`
     }
     catch(err) {
       console.error("Erro ao buscar usuário:", err)
@@ -52,7 +52,7 @@ async function login(event){
   }
 
   try{
-    const response = await fetch(url, options)
+    const response = await fetch("http://localhost:8088/usuarios/login", options)
     const token = await response.json()
     
     if (response.ok && token.token){
