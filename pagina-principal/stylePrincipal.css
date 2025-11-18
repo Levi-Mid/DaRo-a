@@ -177,19 +177,18 @@ header {
 }
 
 .green {
-  background-color: #c2e7e3;
-  border-top-left-radius: 50px;
-  border-bottom-left-radius: 50px;
+  background-color: #BFDCCD;
+  border-radius: 120px 0 0 120px;  
 }
 
 .orange {
-  background-color: #f3c3a2;
-  border-top-right-radius: 50px;
-  border-bottom-right-radius: 50px;
+  background-color: #F5C296;
+  border-radius: 0 150px 150px 0;  
 }
 
 .image-box img {
   width: 350px;
   height: auto;
+  margin: 75px;
 }
 
