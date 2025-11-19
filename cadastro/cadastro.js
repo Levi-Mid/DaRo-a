@@ -111,6 +111,7 @@ async function enviar() {
 
     if (response.ok) {
       alert("Usuário cadastrado com sucesso!");
+      window.location.href = "../indexPrincipal.html"
     } else {
       alert("Erro ao cadastrar usuário!");
     }

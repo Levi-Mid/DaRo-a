@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", verificarToken)
 
 async function verificarToken(){
   const token = localStorage.getItem("token")
-
   if (token) {
     try {
       const response = await fetch("http://localhost:8088/usuarios/", {
@@ -31,6 +30,8 @@ async function verificarToken(){
     catch(err) {
       console.error("Erro ao buscar usuário:", err)
     }
+    let carrinho = document.getElementById("linkCarrinho")
+    carrinho.href = "../carrinho/carrinho.html"
   }
 }
 
