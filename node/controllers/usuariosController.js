@@ -33,6 +33,19 @@ async function login(req, res) {
     }
 }
 
+async function getUsuario(req, res) {
+    try{
+        const email = req.user.email
+
+        const usuario = await usersModel.searchUser(email)
+
+        res.status(200).json(usuario)
+    }
+    catch(error){
+        res.status(500).json({msg: "Erro intenro do servidor"})
+    }
+}
+
 async function getNome(req, res) {
     try{
         const nome = req.user.nome
@@ -44,4 +57,4 @@ async function getNome(req, res) {
     }
 }
 
-module.exports = {postUsuario, login, getNome}
+module.exports = {postUsuario, login, getNome, getUsuario}

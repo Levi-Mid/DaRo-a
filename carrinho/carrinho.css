@@ -24,7 +24,7 @@ body {
   height: 600px;
   border-radius: 10px;
   border-bottom-right-radius: 0px;
-  margin-bottom: 0px;
+  margin-bottom: 25px;
   margin-top: 25px;
   display: flex;
   flex-direction: column;
