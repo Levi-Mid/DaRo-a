@@ -57,4 +57,24 @@ async function getNome(req, res) {
     }
 }
 
-module.exports = {postUsuario, login, getNome, getUsuario}
+async function atulizarUsuario(req, res) {
+    try{
+        const id_usuario = req.user.id
+        const dados = req.body
+
+        const {senha} = await usersModel.searchUser(req.user.email) 
+
+        if (!(await bcrypt.compare(dados.senha, senha))){
+            dados.senha = await bcrypt.hash(dados.senha, 10)
+        }
+
+        const resultado = await usersModel.alterarUser(dados, id_usuario)
+
+        res.status(200).json({resultado})
+    }
+    catch(error){
+        res.status(500).json({erro: "Erro interno no servidor: " + error})
+    }
+}
+
+module.exports = {postUsuario, login, getNome, getUsuario, atulizarUsuario}

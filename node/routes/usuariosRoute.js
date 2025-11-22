@@ -7,5 +7,6 @@ router.post("/", usuarioController.postUsuario)
 router.post("/login", usuarioController.login)
 router.get("/", autenticar, usuarioController.getNome)
 router.get("/usuario", autenticar, usuarioController.getUsuario)
+router.patch("/", autenticar, usuarioController.atulizarUsuario)
 
 module.exports = router
