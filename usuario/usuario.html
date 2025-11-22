@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="usuario.css">
 </head>
 <body>
     <div class="container">
-        <div class="barra-lateral">
-            <div>
-                <p>Usuario</p>
-            </div>
-            <div>
-                <p>Pedidos</p>
-            </div>
+        <div class="barra-superior">
+            <a href="../indexPrincipal.html">Voltar</a>
         </div>
-        <div class="infos">
-            
+        <div class="conteudo">
+            <div class="barra-lateral">
+                <div class="opcao" onclick="carregarInfo()">
+                    <p>Usuario</p>
+                </div>
+                <div class="opcao" onclick="carregarPedidos()">
+                    <p>Pedidos</p>
+                </div>
+            </div>
+            <div class="infos" id="infos">
+                <form onsubmit="enviar()" id="form"></form>
+            </div>
         </div>
     </div>
+    <script src="usuario.js"></script>
 </body>
 </html>
