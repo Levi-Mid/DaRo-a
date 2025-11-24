@@ -104,6 +104,39 @@ async function removerItem(id_item) {
     }
 }
 
+async function finalizarCarrinho() {
+    if (!confirm("Deseja finalizar a compra?")) return
+
+    try{
+        const token = localStorage.getItem("token")
+        const response = await fetch("http://localhost:8088/usuarios/usuario", {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        })
+
+        const data = await response.json()
+        const frequencia = data.frequencia
+
+        const finalizar = await fetch("http://localhost:8088/carrinho/final", {
+            method: "POST",
+            headers: {
+                "Authorization": "Bearer " + token,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                frequencia: frequencia,
+            })
+        })
+
+        if (finalizar.ok){
+            window.location.reload()
+        }
+    }
+    catch(erro){
+        console.log(erro)
+    }
+}
 
 // Carregamento inicial
 carregarCarrinho();

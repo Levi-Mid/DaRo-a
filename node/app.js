@@ -6,6 +6,7 @@ const comentariosRoute = require("./routes/comentariosRoute")
 const usuariosRoute = require("./routes/usuariosRoute")
 const produtosRoute = require("./routes/produtosRoute")
 const carrinhoRoute = require("./routes/carrinhoRoute");
+const pedidosRoute = require("./routes/pedidosRoute")
 
 const app = express()
 const porta = process.env.PORTA || 8088
@@ -18,7 +19,8 @@ app.use(express.json())
 app.use("/comentarios", comentariosRoute)
 app.use("/usuarios", usuariosRoute)
 app.use("/produtos", produtosRoute)
-app.use("/carrinho", carrinhoRoute);
+app.use("/carrinho", carrinhoRoute)
+app.use("/pedidos", pedidosRoute)
 
 //Rota principal
 app.get("/", (req, res) => {

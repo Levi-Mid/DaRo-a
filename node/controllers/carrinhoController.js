@@ -69,5 +69,26 @@ async function removerItem(req, res) {
     }
 }
 
+async function finalizarCarrinho(req, res) {
+    try {
+        const id_usuario = req.user.id;
+        const frequencia = req.body.frequencia;
 
-module.exports = { adicionarAoCarrinho, mostrarCarrinho, removerItem };
+        const resultado = await carrinhoModel.finalizarCarrinho(
+            id_usuario,
+            frequencia
+        );
+
+        res.status(200).json(resultado);
+    }
+    catch (erro) {
+        console.error("ERRO no finalizarCarrinho:", erro);
+        res.status(500).json({ 
+            error: "Erro interno no servidor",
+            detalhes: erro.message 
+        });
+    }
+}
+
+
+module.exports = { adicionarAoCarrinho, mostrarCarrinho, removerItem, finalizarCarrinho };

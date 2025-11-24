@@ -113,3 +113,15 @@ body {
     cursor: pointer;
     background-color: #325038;
 }
+
+.pedido {
+    background: white;
+    padding: 5px;
+    margin-bottom: 25px;
+}
+
+.produto {
+    margin-top: 10px;
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
+}

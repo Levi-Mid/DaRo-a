@@ -1,5 +1,5 @@
 const { mssql, config } = require("../config/db");
-
+const { json } = require("express");
 
 async function addProdutoAoCarrinho(id_usuario, id_produto, quantidade) {
 
@@ -131,5 +131,67 @@ async function removerItemDoCarrinho(id_item, id_usuario) {
     return true;
 }
 
+//FINALIZAR
+async function finalizarCarrinho(id_usuario, frequencia) {
+    const pool = await mssql.connect(); 
+    const transaction = new mssql.Transaction(pool);
 
-module.exports = { addProdutoAoCarrinho, getCarrinhoDoUsuario, removerItemDoCarrinho };
+    try {
+        await transaction.begin();
+
+        const selectReq = new mssql.Request(transaction);
+        selectReq.input("id_usuario", mssql.Int, id_usuario);
+
+        const itens = await selectReq.query(`
+            SELECT 
+                p.id AS id_produto,
+                p.nome,
+                p.valor,
+                i.quantidade
+            FROM daroca.itenscarrinho i
+            JOIN daroca.produtos p ON p.id = i.id_produto
+            WHERE i.id_usuario = @id_usuario
+        `);
+
+        if (itens.recordset.length === 0) {
+            await transaction.rollback();
+            return { msg: "Carrinho vazio" };
+        }
+
+        const jsonProdutos = JSON.stringify(itens.recordset);
+
+        const insertReq = new mssql.Request(transaction);
+        insertReq.input("usuario_id", mssql.Int, id_usuario);
+        insertReq.input("produtos", mssql.VarChar(mssql.MAX), jsonProdutos);
+        insertReq.input("frequencia", mssql.Char(2), frequencia);
+
+        const insertResult = await insertReq.query(`
+            INSERT INTO daroca.pedidos (usuario_id, produtos, frequencia)
+            VALUES (@usuario_id, @produtos, @frequencia);
+
+            SELECT SCOPE_IDENTITY() AS id_pedido;
+        `);
+
+        const id_pedido = insertResult.recordset[0].id_pedido;
+
+        const deleteReq = new mssql.Request(transaction);
+        deleteReq.input("id_usuario", mssql.Int, id_usuario);
+
+        await deleteReq.query(`
+            DELETE FROM daroca.itenscarrinho WHERE id_usuario = @id_usuario
+        `);
+
+        await transaction.commit();
+
+        return {
+            msg: "Pedido finalizado com sucesso!",
+            id_pedido
+        };
+    }
+    catch (erro) {
+        await transaction.rollback();
+        throw erro;
+    }
+}
+
+module.exports = { addProdutoAoCarrinho, getCarrinhoDoUsuario, removerItemDoCarrinho, finalizarCarrinho };

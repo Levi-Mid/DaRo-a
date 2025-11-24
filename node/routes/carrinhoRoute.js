@@ -12,4 +12,6 @@ router.post("/", autenticar, carrinhoController.adicionarAoCarrinho);
 // Buscar itens do carrinho
 router.get("/", autenticar, carrinhoController.mostrarCarrinho);
 
+router.post("/final", autenticar, carrinhoController.finalizarCarrinho)
+
 module.exports = router;

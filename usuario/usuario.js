@@ -65,6 +65,57 @@ async function carregarInfo(){
 
 async function carregarPedidos() {
     limparSecao()
+    try {
+        const token = localStorage.getItem("token");
+
+        const response = await fetch("http://localhost:8088/pedidos", {
+            headers: {
+                "Authorization": "Bearer " + token
+            }
+        });
+
+        const data = await response.json();
+        const container = document.getElementById("infos");
+
+        if (!data.pedidos || data.pedidos.length === 0) {
+            container.innerHTML = "<p>Nenhum pedido encontrado.</p>";
+            return;
+        }
+
+        data.pedidos.forEach(pedido => {
+            // transforma string -> array
+            const produtos = JSON.parse(pedido.produtos);
+
+            let numero = 1
+
+            const div = document.createElement("div");
+            div.className = "pedido";
+
+            div.innerHTML = `
+                        <h2>Pedido #${numero}</h2>
+                        <p><strong>Frequência:</strong>Cada ${pedido.frequencia.trim()} dias</p>
+                        <h3>Produtos:</h3>
+                    `;
+
+            produtos.forEach(prod => {
+                div.innerHTML += `
+                            <div class="produto">
+                                <strong>${prod.nome}</strong><br>
+                                Quantidade: ${prod.quantidade}<br>
+                                Valor: R$ ${Math.floor((prod.valor * prod.quantidade) * 100) / 100}
+                            </div>
+                        `;
+            });
+
+            div.innerHTML += `<button onclick="cancelarPedido(${pedido.id_pedido})">Cancelar</button>`
+
+            numero++
+            container.appendChild(div);
+        });
+
+    } catch (erro) {
+        console.error("Erro ao carregar pedidos:", erro);
+    }
 }
 
 async function alterar(infos) {
@@ -117,5 +168,32 @@ async function alterar(infos) {
     }
     else{
         console.log(await alterar.json())
+    }
+}
+
+async function cancelarPedido(id) {
+    try {
+        const token = localStorage.getItem("token")
+
+        const response = await fetch("http://localhost:8088/pedidos/", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token
+            },
+            body: JSON.stringify({ id: id })
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            alert(data.erro || "Erro ao cancelar pedido");
+            return;
+        }
+
+        alert(data.msg);
+        window.location.reload()
+    } catch (erro) {
+        console.error("Erro interno do servidor:", erro);
     }
 }
