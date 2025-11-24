@@ -86,13 +86,11 @@ async function carregarPedidos() {
             // transforma string -> array
             const produtos = JSON.parse(pedido.produtos);
 
-            let numero = 1
-
             const div = document.createElement("div");
             div.className = "pedido";
 
             div.innerHTML = `
-                        <h2>Pedido #${numero}</h2>
+                        <h2>Pedido</h2>
                         <p><strong>Frequência:</strong>Cada ${pedido.frequencia.trim()} dias</p>
                         <h3>Produtos:</h3>
                     `;
@@ -109,7 +107,6 @@ async function carregarPedidos() {
 
             div.innerHTML += `<button onclick="cancelarPedido(${pedido.id_pedido})">Cancelar</button>`
 
-            numero++
             container.appendChild(div);
         });
 
