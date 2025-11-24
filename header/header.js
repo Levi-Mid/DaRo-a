@@ -9,7 +9,7 @@ function buscar(event) {
 
 document.addEventListener("DOMContentLoaded", verificarToken)
 
-async function verificarToken(){
+async function verificarToken() {
   const token = localStorage.getItem("token")
   if (token) {
     try {
@@ -24,23 +24,38 @@ async function verificarToken(){
       let funciona = data.nome
       let nomeCerto = funciona.split(" ")
 
-      document.getElementById("aquelaParteLa").innerHTML =
-        `<h3 id="msgdeboasvindas">Bem-vindo, ${nomeCerto[0]}</h3>`
+      // 
+      document.getElementById("aquelaParteLa").innerHTML = `
+    <div class="user-wrapper">
+        <h3 id="msgdeboasvindas" style="cursor:pointer;">Bem-vindo, ${nomeCerto[0]}</h3>
+
+        <div class="user-dropdown">
+            <a href="../usuario/usuario.html" class="dropdown-item">Perfil do Usuário</a>
+            <a href="#" onclick="logout()" class="dropdown-item">Logout</a>
+        </div>
+    </div>
+    `;
+
+      // AGORA O MENU FICA DENTRO DE `aquelaParteLa`
+
     }
-    catch(err) {
+    catch (err) {
       console.error("Erro ao buscar usuário:", err)
     }
+
+    // corrigir o link do carrinho
     let carrinho = document.getElementById("linkCarrinho")
     carrinho.href = "../carrinho/carrinho.html"
   }
 }
 
-async function login(event){
+
+async function login(event) {
   event.preventDefault()
 
   let email = document.getElementById("email").value
   let senha = document.getElementById("senha").value
-  
+
   let options = {
     method: "POST",
     headers: {
@@ -52,20 +67,43 @@ async function login(event){
     })
   }
 
-  try{
+  try {
     const response = await fetch("http://localhost:8088/usuarios/login", options)
     const token = await response.json()
-    
-    if (response.ok && token.token){
+
+    if (response.ok && token.token) {
       localStorage.setItem("token", token.token)
       window.location.reload()
     }
-    else{
+    else {
       alert("Credenciais incorretas")
     }
 
   }
-  catch(error){
+  catch (error) {
     alert(error)
   }
 }
+
+function logout() {
+  localStorage.removeItem("token");
+  window.location.reload()
+}
+
+document.addEventListener("click", function(e) {
+    const wrapper = document.querySelector(".user-wrapper");
+    const dropdown = document.querySelector(".user-dropdown");
+
+    if (!wrapper) return;
+
+    // clicou no Bem-vindo
+    if (e.target.id === "msgdeboasvindas") {
+        wrapper.classList.toggle("ativo");
+        return;
+    }
+
+    // clicou fora → fecha
+    if (!wrapper.contains(e.target)) {
+        wrapper.classList.remove("ativo");
+    }
+});
