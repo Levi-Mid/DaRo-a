@@ -20,7 +20,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #ECECEC;
+    background-color: #ffa75b;
 }
 
 .conteudo{
@@ -44,7 +44,7 @@ body {
     display: flex;
     flex-direction: column;
     width: 20%;
-    border-right: 1px solid black;
+    box-shadow: 5px 0 5px -2px #eb88328c;
     height: 100%;
 }
 
@@ -62,7 +62,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-bottom: 1px solid black;
+    box-shadow: 2px 2px 5px #eb883246;
     user-select: none;
 }
 
@@ -139,10 +139,18 @@ body {
     background: white;
     padding: 5px;
     margin-bottom: 25px;
+    border-radius: 5px;
 }
 
 .produto {
     margin-top: 10px;
     margin-bottom: 1em;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.pedido > button{
+    border: none;
+    padding: 10px;
+    background-color:#5f9269;
+    color: #ffffff;
+    border-radius: 5px;
 }
