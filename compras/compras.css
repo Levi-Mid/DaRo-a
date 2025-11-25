@@ -1,8 +1,16 @@
 /*edições gerais */
 
+.league-gothic {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
 main{
     padding: 0px 20px 40px 20px;
-    font-family: Inter, normal, sans-serif;
+    font-family: "League Gothic", sans-serif;
 
 }
 .titulo_pagina{

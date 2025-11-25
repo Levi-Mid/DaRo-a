@@ -87,7 +87,9 @@ async function login(event) {
 
 function logout() {
   localStorage.removeItem("token");
+  alert("Conta desconectada")
   window.location.reload()
+  
 }
 
 document.addEventListener("click", function(e) {

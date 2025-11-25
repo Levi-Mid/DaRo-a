@@ -1,3 +1,12 @@
+.league-gothic {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
 #botoes_lateral{
     display: flex;
     align-items: center;
@@ -96,7 +105,7 @@
     font-weight: bold;
     padding: 12px 0;          
     border-right: white 1px solid;
-    font-family: sans-serif;
+    font-family: "League Gothic", sans-serif;
 }
 #menu a:hover {
     background-color: #ca6a16;

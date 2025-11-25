@@ -2,7 +2,16 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "League Gothic", sans-serif;
+}
+
+.league-gothic {
+  font-family: "League Gothic", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
 }
 
 body {
@@ -11,7 +20,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: darkgrey;
+    background-color: #ECECEC;
 }
 
 .conteudo{
@@ -25,9 +34,9 @@ body {
     margin: auto;
     display: flex;
     flex-direction: column;
-    width: 900px;
-    height: 650px;
-    background-color: wheat;
+    width: 1000px;
+    height: 750px;
+    background-color: #fdede0;
     border-radius: 20px;
 }
 
@@ -41,7 +50,7 @@ body {
 
 .infos {
     width: 80%;
-    padding: 5px;
+    padding: 10px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -59,7 +68,8 @@ body {
 
 .opcao:hover{
     cursor: pointer;
-    background-color: rgb(224, 204, 166);
+    background-color: #EB8832;
+    color: white;
 }
 
 .opcao > p{
@@ -68,7 +78,8 @@ body {
 }
 
 .barra-superior {
-    background-color: #EB8832;
+    padding: 30px 30px 30px 0;
+    background-color: #3A5D41;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 3em;
@@ -79,39 +90,49 @@ body {
 
 .barra-superior > a{
     width: min-content;
-    margin-left: 1em;
     font-size: larger;
     text-decoration: none;
     color: white;
     background-color: #3A5D41;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 19px 106px 19px 19px;
+    border-radius: 20px 0 0 0;
 }
+.barra-superior > a:hover{
+    color: white;
+    background-color: #EB8832;
 
+}
 .caixa{
     display: flex;
     flex-direction: column;
-    font-size: large;
+    font-family: sans-serif;
+    font-size: 15px;
+    margin: 4px 0px 0px 30px;
 }
 
 .caixa > input{
+    border: none;
+    padding: 5px;
+    border-radius: 7px;
     width: 300px;
     margin-bottom: 10px;
 }
 
 #enviar{
+    margin-top:10px;
     border-style: none;
     background-color: #3A5D41;
     color: white;
-    padding: 10px;
+    padding: 10px 20px 10px 20px;
     border-radius: 10px;
     font-size: medium;
     text-align: center;
+    margin-left: 30px;
 }
 
 #enviar:hover{
     cursor: pointer;
-    background-color: #325038;
+    background-color: #5f9269;
 }
 
 .pedido {

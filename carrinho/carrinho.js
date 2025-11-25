@@ -43,6 +43,7 @@ function exibirItensCarrinho(itens) {
         produtoDiv.appendChild(img);
 
         const infoDiv = document.createElement("div");
+        infoDiv.classList.add("info-produtos")
         const nomeP = document.createElement("p");
         nomeP.textContent = item.nome;
 
@@ -58,7 +59,7 @@ function exibirItensCarrinho(itens) {
         produtoDiv.appendChild(infoDiv);
 
         const subtotalP = document.createElement("p");
-        subtotalP.textContent = `Subtotal: R$ ${item.subtotal.toFixed(2)}`;
+        subtotalP.textContent = `Valor: R$ ${item.subtotal.toFixed(2)}`;
         subtotalP.style.fontWeight = "bold";
         produtoDiv.appendChild(subtotalP);
 
