@@ -17,7 +17,9 @@ function mostrarComentarios(url){
                 nome.textContent = "Nome: " + pull[i].nome
 
                 let dia = document.createElement("p")
-                dia.textContent = "Data: " + pull[i].data_criacao
+                let novo_dia = pull[i].data_criacao.split("T")
+
+                dia.textContent = "Data: " + novo_dia[0]
 
                 info.append(nome, dia)
 
